@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello Django !</h1>
-    <p>
-        J'ai..
-        {% if bands|length < 5 %}
-            peu de
-        {% elif bands|length < 10 %}
-            quelques
-        {% else %}
-            beaucoup de
-        {% endif %}
-            groupes préférés.
-    </p>
-</body>
-</html>
+{% extends 'sourates/base.html' %}
+
+{% block content %}
+
+<h1>Hello Django !</h1>
+
+<p>Mes groupes préférés sont :</p>
+
+<ul>
+    {% for band in bands %}
+        <li>
+            {{ band.name }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'sourates/base.html' %}
+
+{% block content %}
+
     <h1>Votre sourate du jour est :</h1>
         <ul>
             <li>{{ titles.0.name }}</li>
         </ul>
-</body>
-</html>
+
+{% endblock %}
