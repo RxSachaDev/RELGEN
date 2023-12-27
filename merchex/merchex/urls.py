@@ -20,8 +20,10 @@ from sourates import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/',views.hello),
+    path('bands/', views.band_list, name='band-list'),
+    path('bands/<int:id>/', views.band_detail, name='band-detail'),
     path('about-us/',views.about),
     path('sourate-du-jour/',views.sourates),
-    path('contactez-nous/',views.contact),
+    path('contactez-nous/',views.contact, name = 'contact'),
+    path('merci-de-votre-message/',views.emailsent, name = 'email-sent')
 ]

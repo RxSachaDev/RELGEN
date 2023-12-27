@@ -4,13 +4,22 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from sourates.models import Band
 from sourates.models import Title
+from sourates.forms import ContactUsForm
+from django.core.mail import send_mail
+from django.shortcuts import redirect
 
 
-def hello(request):
+def band_list(request):
     bands = Band.objects.all()
     return render(request,
-        'sourates/hello.html',
+        'sourates/band_list.html',
         {'bands': bands})
+
+def band_detail(request, id):
+  band = Band.objects.get(id=id) 
+  return render(request,
+          'sourates/band_detail.html',
+          {'band': band})
 
 def about(request):
     return render(request,'sourates/about.html')
@@ -20,4 +29,28 @@ def sourates(request):
     return render(request,'sourates/sourates.html', {'titles' : titles})
 
 def contact(request):
-    return render(request,'sourates/contact.html')
+    if request.method == 'POST':
+        # créer une instance de notre formulaire et le remplir avec les données POST
+        form = ContactUsForm(request.POST)
+
+        if form.is_valid():
+            send_mail(
+            subject=f'Message from {form.cleaned_data["name"] or "anonyme"} via MerchEx Contact Us form',
+            message=form.cleaned_data['message'],
+            from_email=form.cleaned_data['email'],
+            recipient_list=['admin@merchex.xyz'],
+        )
+            return redirect('email-sent')   
+    # si le formulaire n'est pas valide, nous laissons l'exécution continuer jusqu'au return
+    # ci-dessous et afficher à nouveau le formulaire (avec des erreurs).
+
+    else:
+        # ceci doit être une requête GET, donc créer un formulaire vide
+        form = ContactUsForm()
+
+    return render(request,
+                'sourates/contact.html',
+                {'form': form})
+
+def emailsent(request):
+    return render(request,'sourates/emailsent.html')
