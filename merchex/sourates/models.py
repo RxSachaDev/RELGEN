@@ -16,7 +16,14 @@ class Band(models.Model):
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
+    def __str__(self):
+        return f'{self.name}'
 
 class Title(models.Model):
     name = models.fields.CharField(max_length=3000)
-    verset = models.fields.CharField(max_length=5000)   
+    verset = models.fields.CharField(max_length=5000)
+    n_verset = models.fields.IntegerField(
+    validators=[MinValueValidator(1), MaxValueValidator(286)]    
+    )  
+    def __str__(self):
+        return f'{self.name}' 
