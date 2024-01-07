@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+}
+
+nav input {
+    display: none;
+}
+
+.menu-deroulant #close {
+    display: none;
+}
+
+#checknav:checked~.menu-deroulant #close {
+    display: block;
+}
+
+#checknav:checked~.menu-deroulant #open {
+    display: none;
+}
+
+#checknav:checked~.nav-links {
+    display: block;
+    position: absolute;
+}
+
+.nav-links {
+    display: none;
+}
+
+header {
+    background: url(assets/Ciel.jpg);
+    background-size: 100% 100%;
+}
+
+.menu-deroulant i {
+    font-size: 48px;
+    color: white;
+    padding-top: 4vh;
+    padding-left: 2vw;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 80%;
+}
+
+.container img {
+    padding-top: 2vh;
+    width: 10vw;
+}
+
+.haut {
+    display: flex;
+    flex-direction: row;
+    padding-left: 7%;
+}
+.haut img {
+    width: 15vw;
+    height: 15vw;
+    padding-top: 17vh;
+    padding-left: 10vw;
+    gap: 15vw;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 7vh;
+    padding-bottom: 11vh;
+    font-size: 55px;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+}

@@ -1,7 +1,42 @@
 {% extends 'sourates/base.html' %}
 
 {% block content %}
-
-    <h1>A propos de nous</h1>
-    
+    {% load static %}
+    <header>
+        <div class='container'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christiannisme' %}">Christiannisme</a></li>
+                        <li><a href="">Judaïsme </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        </div>
+        <div class='haut'>
+            <img src="{% static 'sourates/assets/eglise.png' %}" alt="Eglise">
+            <img src="{% static 'sourates/assets/mosquee.png' %}" alt="Mosquée">
+            <img src="{% static 'sourates/assets/synagogue.png' %}" alt="Synagogue">
+        </div>
+        <h1>WE BELIEVE IN GOD</h1>
+    </header>
+    <div>
+        <img src="{% static 'sourates/assets/mosquee_abu.jpg' %}" alt="Mosquee Abu">
+        <div class='middle'>
+            <p>Découvrez votre verset quotidien</p>
+            <p>Découvrez vos horaires de prières</p>
+        </div>
+    </div>
+    <div>
+        <p>Pour nous contacter Cliquez ici</p>
+        <img src="{% static 'sourates/assets/cathédrale.jpg' %}" alt="Cathédrale">
+    </div>
 {% endblock %}
