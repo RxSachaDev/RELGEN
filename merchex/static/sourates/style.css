@@ -12,6 +12,9 @@ nav input {
 
 #checknav:checked~.menu-deroulant #close {
     display: block;
+    background-color: white;
+    width: 13vw;
+    color: black;
 }
 
 #checknav:checked~.menu-deroulant #open {
@@ -20,11 +23,36 @@ nav input {
 
 #checknav:checked~.nav-links {
     display: block;
-    position: absolute;
+    position: fixed;
+    background-color: white;
+    width: 15vw;
+    padding-top: 15vh;
+    height: 100%;
+    color: black;
 }
 
 .nav-links {
     display: none;
+}
+
+.nav-links ul {
+    list-style-type: none;
+}
+
+.nav-links li {
+    padding-bottom: 5vh;
+}
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-family: 'Istok Web', sans-serif;
+    background: linear-gradient(to top, black 0%, black 5%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size .5s;
+}
+
+.nav-links a:hover {
+    background-size: 100% 100%;
 }
 
 header {
@@ -33,10 +61,16 @@ header {
 }
 
 .menu-deroulant i {
+    position: fixed;
     font-size: 48px;
     color: white;
     padding-top: 4vh;
     padding-left: 2vw;
+    z-index: 2;
+}
+
+.menu-deroulant:hover{
+    cursor: pointer;
 }
 .container {
     display: flex;
@@ -66,7 +100,71 @@ h1 {
     text-align: center;
     padding-top: 7vh;
     padding-bottom: 11vh;
-    font-size: 55px;
+    font-size: 100px;
     color: white;
     font-family: 'Istok Web', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Istok Web', sans-serif;
+    padding-bottom: 5vh;
+}
+
+.middle {
+    padding-top: 20vh;
+    display: flex;
+    flex-direction: row;
+}
+.middle img {
+    width: 40vw;
+    height: 80vh;
+}
+.texte {
+    padding-top: 10vh;
+}
+.texte p {
+    width: 40vw;
+    padding-left: 8vw;
+    font-size: 75px;
+    padding-bottom: 10vh;
+    font-family: 'Sawarabi Mincho', serif;
+    font-style: italic;
+}
+
+.middle2 {
+    padding-top: 20vh;
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+}
+
+.middle2 img {
+    width: 40vw;
+    height: 80vh;
+}
+
+.middle2 p {
+    text-decoration: none;
+    padding-right: 15vw;
+    font-size: 75px;
+    color: black;
+    font-family: 'Sawarabi Mincho', serif;
+    font-style: italic;
+}
+
+.middle2 a {
+    text-decoration: none;
+    width: 40vw;
+    padding-right: 8vw;
+    font-size: 75px;
+    padding-bottom: 10vh;
+    color: black;
+    font-family: 'Sawarabi Mincho', serif;
+    font-style: italic;
+}
+
+.middle2 a:hover {
+    text-decoration: underline;
 }

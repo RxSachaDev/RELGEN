@@ -12,10 +12,12 @@
                     <i class='bx bx-x' id="close"></i>
                 </label>
                 <div class="nav-links">
+                    <h2>RELGEN</h2>
                     <ul>
                         <li><a href="{% url 'islam' %}">Islam</a></li>
                         <li><a href="{% url 'christiannisme' %}">Christiannisme</a></li>
                         <li><a href="">Judaïsme </a></li>
+                        <li><a href="">Contact </a></li>
                     </ul>
                 </div>
             </nav>
@@ -28,15 +30,19 @@
         </div>
         <h1>WE BELIEVE IN GOD</h1>
     </header>
-    <div>
+    <div class='middle'>
         <img src="{% static 'sourates/assets/mosquee_abu.jpg' %}" alt="Mosquee Abu">
-        <div class='middle'>
+        <div class='texte'>
             <p>Découvrez votre verset quotidien</p>
             <p>Découvrez vos horaires de prières</p>
         </div>
     </div>
-    <div>
-        <p>Pour nous contacter Cliquez ici</p>
-        <img src="{% static 'sourates/assets/cathédrale.jpg' %}" alt="Cathédrale">
+    <div class='middle2'>
+        <div>
+            <p>Pour nous contacter</p>
+            <a href="{% url 'contact' %}">Cliquez ici</a>
+        </div>
+            <img src="{% static 'sourates/assets/cathédrale.jpg' %}" alt="Cathédrale">
+        
     </div>
 {% endblock %}
