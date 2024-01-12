@@ -2,37 +2,77 @@
     margin: 0;
 }
 
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideTopToBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideBottomToTop {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 nav input {
     display: none;
 }
 
-.menu-deroulant #close {
-    display: none;
-}
-
-#checknav:checked~.menu-deroulant #close {
-    display: block;
-    background-color: white;
-    width: 13vw;
-    color: black;
-}
-
-#checknav:checked~.menu-deroulant #open {
-    display: none;
-}
-
-#checknav:checked~.nav-links {
-    display: block;
-    position: fixed;
-    background-color: white;
-    width: 15vw;
-    padding-top: 15vh;
-    height: 100%;
-    color: black;
-}
-
 .nav-links {
-    display: none;
+    position: fixed;
+    width: 15vw;
+    margin-top: 15vh;
+    margin-left: -20vw;
+    color: black;
+    transition: 0.7s;
+    z-index: 2;
 }
 
 .nav-links ul {
@@ -55,11 +95,6 @@ nav input {
     background-size: 100% 100%;
 }
 
-header {
-    background: url(assets/Ciel.jpg);
-    background-size: 100% 100%;
-}
-
 .menu-deroulant i {
     position: fixed;
     font-size: 48px;
@@ -72,10 +107,47 @@ header {
 .menu-deroulant:hover{
     cursor: pointer;
 }
+
+.menu-deroulant #close {
+    position: fixed;
+    margin-left: -20vw;
+    transition: 0.7s;
+    background-color: white;
+    color: black;
+    width: 13vw;
+    height: 100%;
+    z-index: 1;
+    
+}
+
+
+
+#checknav:checked~.menu-deroulant #close { 
+    margin-left: 0px;
+    transition: opacity 0.7s;
+    animation: opacity 1.2s ease-in-out;
+    
+}
+
+#checknav:checked~.menu-deroulant #open {
+    display: none;
+}
+
+#checknav:checked~.nav-links {
+   transition: 0.7s;
+   animation: opacity 1.2s ease-in-out;
+    margin-left: 0px;
+}
+
+header {
+    background: url(assets/Ciel.jpg);
+    background-size: 100% 100%;
+}
+
 .container {
     display: flex;
     flex-direction: row;
-    gap: 80%;
+    gap: 85%;
 }
 
 .container img {
@@ -94,6 +166,7 @@ header {
     padding-top: 17vh;
     padding-left: 10vw;
     gap: 15vw;
+    animation: slideTopToBottom 1.5s ease-in-out;
 }
 
 h1 {
@@ -103,6 +176,8 @@ h1 {
     font-size: 100px;
     color: white;
     font-family: 'Istok Web', sans-serif;
+    transition: opacity 0.7s;
+    animation: slideBottomToTop 1.5s ease-in-out;
 }
 
 h2 {
@@ -152,6 +227,7 @@ h2 {
     color: black;
     font-family: 'Sawarabi Mincho', serif;
     font-style: italic;
+    padding-top: 10vh;
 }
 
 .middle2 a {
@@ -168,3 +244,31 @@ h2 {
 .middle2 a:hover {
     text-decoration: underline;
 }
+footer {
+    height: 20vh;
+    background: url(assets/Ciel.jpg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30vw;
+    color: white;
+    font-size: 25px;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 600;
+    margin-top: 20vh;
+}
+
+footer img {
+    width: 10vw;
+}
+.footer-links a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
