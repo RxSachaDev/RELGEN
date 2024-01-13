@@ -1,10 +1,75 @@
 {% extends 'sourates/base.html' %}
 
 {% block content %}
-
-    <h1>Votre sourate du jour est :</h1>
-        <ul>
-            <li>{{ titles.0.name }}</li>
-        </ul>
+    {% load static %}
+    <header class='islam'>
+        <div class='container1'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christiannisme' %}">Christiannisme</a></li>
+                        <li><a href="">Judaïsme </a></li>
+                        <li><a href="">Contact </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h1>ISLAM</h1>
+            <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        </div>
+    </header>
+    <main>
+        <div class='sourate'>
+            <h3>{{ titles.1.name }}</h3>
+            <p>"{{ titles.1.verset }}"</p>
+        </div>
+        <div class='priere'>
+            <div class='info1'>
+                <div class='info'>
+                    <p>Fajr</p>
+                    <img src="{% static 'sourates/assets/Fajr.jpg' %}" alt="Fajr">
+                    <p>00h00</p>
+                </div>
+                <div class='info'>
+                    <p>Dhuhr</p>
+                    <img src="{% static 'sourates/assets/Dhuhr.jpg' %}" alt="Dhuhr">
+                    <p>00h00</p>
+                </div>
+                <div class='info'>
+                    <p>'Asr</p>
+                    <img src="{% static 'sourates/assets/Asr.jpg' %}" alt="Asr">
+                    <p>00h00</p>
+                </div>
+            </div>
+            <div class='info1'>
+                <div class='info'>
+                    <p>Mahgreb</p>
+                    <img src="{% static 'sourates/assets/Mahgreb.jpg' %}" alt="">
+                    <p>00h00</p>
+                </div>
+                <div class='info'>
+                    <p>'Ichâ'</p>
+                    <img src="{% static 'sourates/assets/Icha.jpg' %}" alt="">
+                    <p>00h00</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class='islam'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <p>RELGEN © 2024 by Roux Sacha</p>
+        <div class='footer-links'>
+            <a href="">Accueil</a>
+            <a href="">Contact</a>
+            <a href="">A propos</a>
+        </div>
+    </footer>    
 
 {% endblock %}
