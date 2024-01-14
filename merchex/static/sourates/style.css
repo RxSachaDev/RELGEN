@@ -74,6 +74,8 @@ nav input {
 }
 
 .nav-links {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     width: 15vw;
     margin-top: 15vh;
@@ -90,6 +92,11 @@ nav input {
 .nav-links li {
     padding-bottom: 5vh;
 }
+
+.nav-links img {
+    margin-left: -28vw;
+}
+
 .nav-links a {
     text-decoration: none;
     color: black;
@@ -338,33 +345,46 @@ h3 {
 .info1 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    margin-left: 5vw;
     gap: 1vw;
 }
 
 
 
 footer {
-    height: 30vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30vw;
+    gap: 15vw;
     color: white;
-    font-size: 25px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 600;
     margin-top: 10vh;
+    height: 20vh;
 }
 
 footer img {
     width: 10vw;
 }
-.footer-links a {
+.footer-container {
+    padding-top: 5vh;
+    font-size: 30px;
+}
+.footer-container p {
+    padding-bottom: 2vh;
+}
+.footer-links  {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.footer-links a {
     text-decoration: none;
     color: white;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 4px 5px 20px black;
 }
 
 .footer-links a:hover {

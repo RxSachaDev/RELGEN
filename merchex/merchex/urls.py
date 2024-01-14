@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('bands/', views.band_list, name='christiannisme'),
     path('bands/<int:id>/', views.band_detail, name='band-detail'),
-    path('about-us/',views.about),
+    path('accueil/',views.about),
     path('sourate-du-jour/',views.sourates, name ='islam'),
     path('contactez-nous/',views.contact, name = 'contact'),
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent')
