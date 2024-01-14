@@ -132,7 +132,7 @@ nav input {
 
 #checknav:checked~.menu-deroulant #close { 
     margin-left: 0px;
-    transition: opacity 0.7s;
+    transition: 0.7s;
     animation: opacity 1.2s ease-in-out;
     
 }
@@ -198,7 +198,7 @@ h1 {
     font-size: 100px;
     color: white;
     font-family: 'Istok Web', sans-serif;
-    transition: opacity 0.7s;
+    animation: opacity 0.7s;
     animation: slideBottomToTop 1.5s ease-in-out;
 }
 
@@ -207,6 +207,10 @@ h2 {
     font-size: 40px;
     font-family: 'Istok Web', sans-serif;
     padding-bottom: 5vh;
+}
+
+h3 {
+    font-size: 70px;
 }
 
 .middle {
@@ -276,7 +280,6 @@ h2 {
 }
 
 .sourate h3 {
-    font-size: 50px;
     padding-bottom: 5vh;
     font-family: 'Istok Web', sans-serif;
     animation: slideLeftToRight 1.5s ease-in-out;
@@ -289,35 +292,54 @@ h2 {
 
 .priere {
     margin-top: 10vh;
-    background-image: url(assets/priere.jpg);
-    background-size: 100% 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
 }
 
-.priere img {
-    width: 10vw;
-    height: 10vw;
+
+.fajr{
+    width: 52vw;
+    background-image: url(assets/Fajr.jpg);
+}
+.dhuhr{
+    width: 37vw;
+    background-image: url(assets/Dhuhr.jpg);
+}
+.asr{
+    width: 29vw;
+    background-image: url(assets/Asr.jpg);
+}
+.maghreb{
+    width: 29vw;
+    background-image: url(assets/Mahgreb.jpg);
+}
+.icha{
+    width: 29vw;
+    background-image: url(assets/Icha.jpg);
 }
 
 .info {
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    width: 15vw;
+    height: 50vh;
+    background-size: 100% 100%; 
     text-align: center;
-    background-color: white;
-    border: solid 2px #C78255;
-    border-radius: 30px;
-    font-size: 20px;
+    font-size: 90px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 600;
+    color: white;
+    padding-top: 20vh;
+    text-shadow: 4px 5px 20px black;
+}
+
+.info p {
+    animation: opacity 1.5s;
 }
 
 .info1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 15vw;
-    padding-top: 10vh;
+    gap: 1vw;
 }
 
 

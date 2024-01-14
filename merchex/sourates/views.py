@@ -7,6 +7,7 @@ from sourates.models import Title
 from sourates.forms import ContactUsForm
 from django.core.mail import send_mail
 from django.shortcuts import redirect
+import random
 
 
 def band_list(request):
@@ -25,8 +26,13 @@ def about(request):
     return render(request,'sourates/about.html')
 
 def sourates(request):
-    titles = Title.objects.all()
-    return render(request,'sourates/sourates.html', {'titles' : titles})
+    # Récupérer tous les objets Title et les ordonner de manière aléatoire
+    titles = Title.objects.all().order_by('?')[:1]
+
+    # S'assurer qu'il y a au moins un titre
+    title = titles[0]
+
+    return render(request, 'sourates/sourates.html', {'title': title})
 
 def contact(request):
     if request.method == 'POST':
