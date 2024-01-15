@@ -35,25 +35,25 @@
             <div class='info1'>
                 <div class='info fajr'>
                     <p>Fajr</p>
-                    <p>00h00</p>
+                    <p>{{ fajr_hours }}h{{ fajr_minutes}}min{{ fajr_seconds }}s</p>
                 </div>
                 <div class='info dhuhr'>
                     <p>Dhuhr</p>
-                    <p>00h00</p>
+                    <p>{{ dhuhr_hours }}h{{ dhuhr_minutes}}min{{ dhuhr_seconds }}s</p>
                 </div> 
             </div>
             <div class='info1'>
                 <div class='info asr'>
                     <p>'Asr</p>
-                    <p>00h00</p>
+                    <p>{{ asr_hours }}h{{ asr_minutes}}min{{ asr_seconds }}s</p>
                 </div>
                 <div class='info maghreb'>
-                    <p>Mahgreb</p>
-                    <p>00h00</p>
+                    <p>Maghreb</p>
+                    <p> {{ maghreb_hours }}h{{ maghreb_minutes}}min{{ maghreb_seconds }}s</p>
                 </div>
                 <div class='info icha'>
                     <p>'Ichâ'</p>
-                    <p>00h00</p>
+                    <p>{{ icha_hours }}h{{ icha_minutes}}min{{ icha_seconds }}s</p>
                 </div>
             </div>
         </div>
@@ -71,6 +71,7 @@
             </div>
         </div>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
-    </footer>    
+    </footer>
+        
 
 {% endblock %}
