@@ -67,6 +67,7 @@
 
 .islam {
     background: url(assets/desert.jpg)center center;
+    background-size: 100% 100%;
 }
 nav input {
     display: none;
@@ -286,13 +287,24 @@ h3 {
 
 .sourate h3 {
     padding-bottom: 5vh;
-    font-family: 'Istok Web', sans-serif;
     animation: slideLeftToRight 1.5s ease-in-out;
 }
 .sourate p {
     font-size: 25px;
     font-family: 'Sawarabi Mincho', serif;
     animation: slideLeftToRight 1.5s ease-in-out;
+}
+
+.en-tete {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Istok Web', sans-serif;
+    gap: 70%;
+}
+
+.en-tete p {
+    font-weight: 600;
+    padding-top: 1vh;
 }
 
 .priere {
@@ -328,7 +340,7 @@ h3 {
     height: 50vh;
     background-size: 100% 100%; 
     text-align: center;
-    font-size: 90px;
+    font-size: 85px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 600;
     color: white;
