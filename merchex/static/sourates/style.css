@@ -288,6 +288,7 @@ h3 {
 .sourate h3 {
     padding-bottom: 5vh;
     animation: slideLeftToRight 1.5s ease-in-out;
+    width: 25vw;
 }
 .sourate p {
     font-size: 25px;
@@ -299,12 +300,12 @@ h3 {
     display: flex;
     flex-direction: row;
     font-family: 'Istok Web', sans-serif;
-    gap: 70%;
 }
 
 .en-tete p {
     font-weight: 600;
     padding-top: 1vh;
+    padding-left: 50vw;
 }
 
 .priere {

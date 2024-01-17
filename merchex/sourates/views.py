@@ -3,7 +3,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from sourates.models import Band
-from sourates.models import Title
+from sourates.models import Sourate
 from sourates.models import Date
 from sourates.forms import ContactUsForm
 from django.core.mail import send_mail
@@ -28,11 +28,11 @@ def about(request):
     return render(request,'sourates/about.html')
 
 def sourates(request):
-    # Récupérer tous les objets Title et les ordonner de manière aléatoire
-    titles = Title.objects.all().order_by('?')[:1]
+    # Récupérer tous les objets Sourate et les ordonner de manière aléatoire
+    sourates = Sourate.objects.all().order_by('?')[:1]
 
     # S'assurer qu'il y a au moins un titre
-    title = titles[0]
+    sourate = sourates[0]
 
     date = Date.objects.all()
 
@@ -114,7 +114,7 @@ def sourates(request):
 
         icha_seconds = (Icha.seconds % 3600) % 60
 
-    return render(request, 'sourates/sourates.html', {'title': title,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds } )
+    return render(request, 'sourates/sourates.html', {'sourate': sourate,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds } )
 
 def contact(request):
     if request.method == 'POST':

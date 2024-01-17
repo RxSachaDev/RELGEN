@@ -25,7 +25,7 @@ urlpatterns = [
     path('bands/', views.band_list, name='christiannisme'),
     path('bands/<int:id>/', views.band_detail, name='band-detail'),
     path('accueil/',views.about),
-    path('sourate-du-jour/',views.sourates, name ='islam'),
+    path('sourate-quotidienne/',views.sourates, name ='islam'),
     path('contactez-nous/',views.contact, name = 'contact'),
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

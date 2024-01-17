@@ -19,7 +19,7 @@ class Band(models.Model):
     def __str__(self):
         return f'{self.name}'
 
-class Title(models.Model):
+class Sourate(models.Model):
     name = models.fields.CharField(max_length=3000)
     verset = models.fields.CharField(max_length=5000)
     n_verset = models.fields.IntegerField(
