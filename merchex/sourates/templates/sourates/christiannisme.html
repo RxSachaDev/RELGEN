@@ -1,0 +1,107 @@
+{% extends 'sourates/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <header class='christ'>
+        <div class='container1'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christiannisme' %}">Christiannisme</a></li>
+                        <li><a href="">Judaïsme </a></li>
+                        <li><a href="">Contact </a></li>
+                    </ul>
+                    <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
+                </div>
+            </nav>
+            <h1>CHRISTIANNISME</h1>
+            <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        </div>
+    </header>
+    <main>
+        <div class='sourate B'>
+            <div class='en-tete'>
+                <h3>{{ christ.name }}</h3>
+                <p>n°{{ christ.n_verset}}</p>
+            </div>
+            <h2>{{ christ.section }}</h2>
+            <p>"{{ christ.verset }}"</p>
+        </div>
+        <div class='priere'>
+            <div class='info1'>
+                <div class='info epiphanie'>
+                    <p>L'Épiphanie</p>
+                    <p>{{ fajr_hours }}h{{ fajr_minutes}}min{{ fajr_seconds }}s</p>
+                </div>
+                <div class='info dhuhr'>
+                    <p>La Chandeleur</p>
+                    <p>{{ dhuhr_hours }}h{{ dhuhr_minutes}}min{{ dhuhr_seconds }}s</p>
+                </div> 
+            </div>
+            <div class='info1'>
+                <div class='info asr'>
+                    <p>Le Carême</p>
+                    <p>{{ asr_hours }}h{{ asr_minutes}}min{{ asr_seconds }}s</p>
+                </div>
+                <div class='info maghreb'>
+                    <p>Le Mercredi des Cendres</p>
+                    <p> {{ maghreb_hours }}h{{ maghreb_minutes}}min{{ maghreb_seconds }}s</p>
+                </div>
+                <div class='info icha'>
+                    <p>Pâques</p>
+                    <p>{{ icha_hours }}h{{ icha_minutes}}min{{ icha_seconds }}s</p>
+                </div>
+            </div>
+        </div>
+        <div class='priere'>
+            <div class='info1'>
+                <div class='info fajr'>
+                    <p>L'Ascension</p>
+                    <p>{{ fajr_hours }}h{{ fajr_minutes}}min{{ fajr_seconds }}s</p>
+                </div>
+                <div class='info dhuhr'>
+                    <p>La Pentecôte</p>
+                    <p>{{ dhuhr_hours }}h{{ dhuhr_minutes}}min{{ dhuhr_seconds }}s</p>
+                </div> 
+            </div>
+            <div class='info1'>
+                <div class='info asr'>
+                    <p>La Fête-Dieu</p>
+                    <p>{{ asr_hours }}h{{ asr_minutes}}min{{ asr_seconds }}s</p>
+                </div>
+                <div class='info maghreb'>
+                    <p>La Toussaint</p>
+                    <p> {{ maghreb_hours }}h{{ maghreb_minutes}}min{{ maghreb_seconds }}s</p>
+                </div>
+                <div class='info icha'>
+                    <p>Noël</p>
+                    <p>{{ icha_hours }}h{{ icha_minutes}}min{{ icha_seconds }}s</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class='christ'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <div class='footer-container'>
+            <p>RELGEN 2024 ©</p>
+            <div class='footer-links'>
+                <a href="">Conditions générales</a>
+                <a href="">Mentions légales</a>
+                <a href="">Données personnelles</a>
+                <a href="">Gestion des cookies</a>
+                <a href="">Aide/FAQ/Contact</a>
+            </div>
+        </div>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+    </footer>
+        
+
+{% endblock %}

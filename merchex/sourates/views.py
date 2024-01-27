@@ -2,7 +2,7 @@
 
 from django.http import HttpResponse
 from django.shortcuts import render
-from sourates.models import Band
+from sourates.models import Christ
 from sourates.models import Sourate
 from sourates.models import Date
 from sourates.forms import ContactUsForm
@@ -12,20 +12,13 @@ import random
 from datetime import *
 
 
-def band_list(request):
-    bands = Band.objects.all()
-    return render(request,
-        'sourates/band_list.html',
-        {'bands': bands})
-
-def band_detail(request, id):
-  band = Band.objects.get(id=id) 
-  return render(request,
-          'sourates/band_detail.html',
-          {'band': band})
+def christ_list(request):
+    christs = Christ.objects.all().order_by('?')[:1]
+    christ = christs[0]
+    return render(request,'sourates/christiannisme.html', {'christ': christ})
 
 def about(request):
-    return render(request,'sourates/about.html')
+    return render(request,'sourates/accueil.html')
 
 def sourates(request):
     # Récupérer tous les objets Sourate et les ordonner de manière aléatoire

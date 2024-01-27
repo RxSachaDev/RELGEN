@@ -69,6 +69,11 @@
     background: url(assets/desert.jpg)center center;
     background-size: 100% 100%;
 }
+
+.christ {
+    background: url(assets/pelerinage.jpg)center center;
+    background-size: 100% 100%;
+}
 nav input {
     display: none;
 }
@@ -170,6 +175,12 @@ nav input {
     padding-bottom: 6vh;
 }
 
+.christ .container1 h1 {
+    padding-left: 25vw;
+    animation: slideTopToBottom 1.5s ease-in-out;
+    padding-bottom: 6vh;
+}
+
 .container img {
     padding-top: 2vh;
     width: 10vw;
@@ -181,6 +192,13 @@ nav input {
     width: 10vw;
     height: 20vh;
     padding-left: 30vw;
+}
+
+.christ .container1 img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 14vw;
 }
 
 .haut {
@@ -209,14 +227,13 @@ h1 {
 }
 
 h2 {
-    text-align: center;
     font-size: 40px;
     font-family: 'Istok Web', sans-serif;
     padding-bottom: 5vh;
 }
 
 h3 {
-    font-size: 70px;
+    font-size: 55px;
 }
 
 .middle {
@@ -285,6 +302,19 @@ h3 {
     border: solid 2px #C78255;
 }
 
+.B {
+    margin-left: 5vw;
+    margin-top: 10vh;
+    width: 80vw;
+    padding: 5vh 5vw;
+    border: solid 2px #6f7829;
+}
+
+.B h2 {
+    font-style: italic;
+    text-decoration: underline;
+}
+
 .sourate h3 {
     padding-bottom: 5vh;
     animation: slideLeftToRight 1.5s ease-in-out;
@@ -337,11 +367,16 @@ h3 {
     background-image: url(assets/Icha.jpg);
 }
 
+.epiphanie {
+    width: 51.75vw;
+    background-image: url(assets/epiphanie.jpg);
+}
+
 .info {
     height: 50vh;
     background-size: 100% 100%; 
     text-align: center;
-    font-size: 85px;
+    font-size: 75px;
     font-family: 'Istok Web', sans-serif;
     font-weight: 600;
     color: white;
