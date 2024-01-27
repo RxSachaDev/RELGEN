@@ -26,5 +26,6 @@ urlpatterns = [
     path('accueil/',views.about),
     path('islam/',views.sourates, name ='islam'),
     path('contactez-nous/',views.contact, name = 'contact'),
-    path('merci-de-votre-message/',views.emailsent, name = 'email-sent')
+    path('merci-de-votre-message/',views.emailsent, name = 'email-sent'),
+    path('judaisme/',views.juda, name = 'judaisme')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

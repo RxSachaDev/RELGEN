@@ -12,6 +12,7 @@ from django.shortcuts import redirect
 import random
 from datetime import *
 from datetime import date
+from sourates.models import Juda
 
 
 def christ_list(request):
@@ -24,8 +25,6 @@ def christ_list(request):
     i = 0
     while i < len(date_objects) and date_objects[i].annee != now.year:
         i += 1
-    
-    Epiphanie = None
 
     if i < len(date_objects):
         time_difference = date_objects[i].epiphanie - now
@@ -113,7 +112,10 @@ def christ_list(request):
 
     return render(request, 'sourates/christiannisme.html', {'christ': christ, 'Epiphanie': Epiphanie, 'Pentecote': Pentecote, 'Fete': Fete, 'Toussaint': Toussaint, 'Noel':Noel, 'Ascension': Ascension, 'Chandeleur': Chandeleur, 'Careme': Careme, 'Mercredi': Mercredi, 'Paques': Paques})
 
-
+def juda(request):
+    juda = Juda.objects.all().order_by('?')[:1]
+    juda = juda[0]
+    return render(request,'sourates/judaisme.html', {'juda': juda})
 
 def about(request):
     return render(request,'sourates/accueil.html')

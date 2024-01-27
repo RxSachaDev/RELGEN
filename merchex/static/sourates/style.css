@@ -74,6 +74,12 @@
     background: url(assets/pelerinage.jpg)center center;
     background-size: 100% 100%;
 }
+
+.juda {
+    background: url(assets/judaisme.jpg)center center;
+    background-size: 100% 100%;
+}
+
 nav input {
     display: none;
 }
@@ -181,6 +187,13 @@ nav input {
     padding-bottom: 6vh;
 }
 
+.juda .container1 h1 {
+    padding-left: 35vw;
+    animation: slideTopToBottom 1.5s ease-in-out;
+    padding-bottom: 6vh;
+}
+
+
 .container img {
     padding-top: 2vh;
     width: 10vw;
@@ -199,6 +212,27 @@ nav input {
     width: 10vw;
     height: 20vh;
     padding-left: 14vw;
+}
+
+.juda .container1 img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 24vw;
+}
+
+.christ .nav-links img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 30vw;
+}
+
+.juda .nav-links img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 30vw;
 }
 
 .haut {
@@ -230,6 +264,10 @@ h2 {
     font-size: 40px;
     font-family: 'Istok Web', sans-serif;
     padding-bottom: 5vh;
+}
+
+.nav-links h2 {
+    text-align: center;
 }
 
 h3 {
@@ -310,6 +348,14 @@ h3 {
     border: solid 2px #6f7829;
 }
 
+.C {
+    margin-left: 5vw;
+    margin-top: 10vh;
+    width: 80vw;
+    padding: 5vh 5vw;
+    border: solid 2px #3870c3;
+}
+
 .B h2 {
     font-style: italic;
     text-decoration: underline;
@@ -373,7 +419,7 @@ h3 {
 }
 
 .chandeleur {
-    width: 51.75vw;
+    width: 36.75vw;
     background-image: url(assets/chandeleur.webp);
 }
 
@@ -398,7 +444,7 @@ h3 {
 }
 
 .pentecote {
-    width: 51.75vw;
+    width: 36.75vw;
     background-image: url(assets/pentecote.jpg);
 }
 
@@ -415,6 +461,30 @@ h3 {
 .noel {
     width: 29vw;
     background-image: url(assets/noel.avif);
+}
+
+.chabbat {
+    width: 90vw;
+    background-image: url(assets/chabbat.jpg);
+}
+
+.chabbat p {
+    font-size: 95px;
+}
+
+.saharit {
+    width: 29vw;
+    background-image: url(assets/saharit.avif);
+}
+
+.minha {
+    width: 29vw;
+    background-image: url(assets/minha.avif);
+}
+
+.maariv {
+    width: 29vw;
+    background-image: url(assets/maariv.avif);
 }
 
 .info {
@@ -464,6 +534,7 @@ footer img {
 }
 .footer-container p {
     padding-bottom: 2vh;
+    text-shadow: 4px 5px 20px black;
 }
 .footer-links  {
     display: flex;

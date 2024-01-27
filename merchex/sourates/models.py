@@ -21,6 +21,15 @@ class Sourate(models.Model):
     )  
     def __str__(self):
         return f'{self.name}'
+    
+class Juda(models.Model):
+    name = models.fields.CharField(max_length=3000)
+    verset = models.fields.CharField(max_length=5000)
+    n_verset = models.fields.IntegerField(
+    validators=[MinValueValidator(1), MaxValueValidator(1534)]    
+    )  
+    def __str__(self):
+        return f'{self.name}'
 
 class Date(models.Model):
     date_jour = models.DateField()

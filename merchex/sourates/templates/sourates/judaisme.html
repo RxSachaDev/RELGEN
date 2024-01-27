@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load static %}
-    <header class='christ'>
+    <header class='juda'>
         <div class='container1'>
             <nav>
             
@@ -16,77 +16,48 @@
                     <ul>
                         <li><a href="{% url 'islam' %}">Islam</a></li>
                         <li><a href="{% url 'christiannisme' %}">Christiannisme</a></li>
-                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                        <li><a href="">Judaïsme </a></li>
                         <li><a href="">Contact </a></li>
                     </ul>
                     <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
                 </div>
             </nav>
-            <h1>CHRISTIANNISME</h1>
+            <h1>JUDAISME</h1>
             <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
         </div>
     </header>
     <main>
-        <div class='sourate B'>
+        <div class='sourate C'>
             <div class='en-tete'>
-                <h3>{{ christ.name }}</h3>
-                <p>n°{{ christ.n_verset}}</p>
+                <h3>{{ juda.name }}</h3>
+                <p>n°{{ juda.n_verset}}</p>
             </div>
-            <h2>{{ christ.section }}</h2>
-            <p>"{{ christ.verset }}"</p>
+            <p>"{{ juda.verset }}"</p>
         </div>
         <div class='priere'>
             <div class='info1'>
-                <div class='info epiphanie'>
-                    <p>L'Épiphanie</p>
+                <div class='info chabbat'>
+                    <p>Chabbat</p>
                     <p>{{ Epiphanie }} jours</p>
                 </div>
-                <div class='info chandeleur'>
-                    <p>La Chandeleur</p>
-                    <p>{{ Chandeleur }} jours</p>
-                </div> 
             </div>
             <div class='info1'>
-                <div class='info careme'>
-                    <p>Le Carême</p>
+                <div class='info saharit'>
+                    <p>Shaharit</p>
                     <p>{{ Careme }} jours</p>
                 </div>
-                <div class='info mercredi'>
-                    <p>Le Mercredi des Cendres</p>
+                <div class='info minha'>
+                    <p>Min'ha</p>
                     <p>{{ Mercredi }} jours</p>
                 </div>
-                <div class='info paques'>
-                    <p>Pâques</p>
+                <div class='info maariv'>
+                    <p>Ma'ariv</p>
                     <p>{{ Paques }} jours</p>
-                </div>
-            </div>
-            <div class='info1'>
-                <div class='info ascension'>
-                    <p>L'Ascension</p>
-                    <p>{{ Ascension }} jours</p>
-                </div>
-                <div class='info pentecote'>
-                    <p>La Pentecôte</p>
-                    <p>{{ Pentecote }} jours</p>
-                </div> 
-            </div>
-            <div class='info1'>
-                <div class='info fete'>
-                    <p>La Fête-Dieu</p>
-                    <p>{{ Fete }} jours</p>
-                </div>
-                <div class='info toussaint'>
-                    <p>La Toussaint</p>
-                    <p>{{ Toussaint }} jours</p>
-                </div>
-                <div class='info noel'>
-                    <p>Noël</p>
-                    <p>{{ Noel }} jours</p>
                 </div>
             </div>
         </div>
     </main>
-    <footer class='christ'>
+    <footer class='juda'>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
         <div class='footer-container'>
             <p>RELGEN 2024 ©</p>
@@ -100,6 +71,4 @@
         </div>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
     </footer>
-        
-
 {% endblock %}
