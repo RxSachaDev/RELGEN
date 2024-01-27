@@ -5,20 +5,119 @@ from django.shortcuts import render
 from sourates.models import Christ
 from sourates.models import Sourate
 from sourates.models import Date
+from sourates.models import Date2
 from sourates.forms import ContactUsForm
 from django.core.mail import send_mail
 from django.shortcuts import redirect
 import random
 from datetime import *
+from datetime import date
 
 
 def christ_list(request):
     christs = Christ.objects.all().order_by('?')[:1]
     christ = christs[0]
-    return render(request,'sourates/christiannisme.html', {'christ': christ})
+    date_objects = Date2.objects.all()
+
+    now = datetime.now().date()
+
+    i = 0
+    while i < len(date_objects) and date_objects[i].annee != now.year:
+        i += 1
+    
+    Epiphanie = None
+
+    if i < len(date_objects):
+        time_difference = date_objects[i].epiphanie - now
+
+        if time_difference.days < 0:
+            Epiphanie = date_objects[i + 1].epiphanie - now
+            Epiphanie = Epiphanie.days
+        else:
+            Epiphanie = time_difference.days
+
+        time_difference2 = date_objects[i].chandeleur - now
+
+        if time_difference2.days < 0:
+            Chandeleur = date_objects[i + 1].chandeleur - now
+            Chandeleur = Chandeleur.days
+        else:
+            Chandeleur = time_difference2.days
+
+        time_difference3 = date_objects[i].careme - now
+
+        if time_difference3.days < 0:
+            Careme = date_objects[i + 1].careme - now
+            Careme = Careme.days
+        else:
+            Careme = time_difference3.days
+
+        time_difference4 = date_objects[i].mercredi - now
+
+        if time_difference4.days < 0:
+            Mercredi = date_objects[i + 1].mercredi - now
+            Mercredi = Mercredi.days
+        else:
+            Mercredi = time_difference4.days
+
+        time_difference5 = date_objects[i].paques - now
+
+        if time_difference5.days < 0:
+            Paques = date_objects[i + 1].paques - now
+            Paques = Paques.days
+        else:
+            Paques = time_difference5.days
+
+        time_difference6 = date_objects[i].ascension - now
+
+        if time_difference6.days < 0:
+            Ascension = date_objects[i + 1].ascension - now
+            Ascension = Ascension.days
+        else:
+            Ascension = time_difference6.days
+
+        time_difference7 = date_objects[i].pentecote - now
+
+        if time_difference7.days < 0:
+            Pentecote = date_objects[i + 1].pentecote - now
+            Pentecote = Pentecote.days
+        else:
+            Pentecote = time_difference7.days
+
+        time_difference8 = date_objects[i].fete - now
+
+        if time_difference8.days < 0:
+            Fete = date_objects[i + 1].fete - now
+            Fete = Fete.days
+        else:
+            Fete = time_difference8.days
+
+        time_difference9 = date_objects[i].toussaint - now
+
+        if time_difference9.days < 0:
+            Toussaint = date_objects[i + 1].toussaint - now
+            Toussaint = Toussaint.days
+        else:
+            Toussaint = time_difference9.days
+
+        time_difference10 = date_objects[i].noel - now
+
+        if time_difference10.days < 0:
+            Noel = date_objects[i + 1].noel - now
+            Noel = Noel.days
+        else:
+            Noel = time_difference10.days
+
+        
+
+
+    return render(request, 'sourates/christiannisme.html', {'christ': christ, 'Epiphanie': Epiphanie, 'Pentecote': Pentecote, 'Fete': Fete, 'Toussaint': Toussaint, 'Noel':Noel, 'Ascension': Ascension, 'Chandeleur': Chandeleur, 'Careme': Careme, 'Mercredi': Mercredi, 'Paques': Paques})
+
+
 
 def about(request):
     return render(request,'sourates/accueil.html')
+
 
 def sourates(request):
     # Récupérer tous les objets Sourate et les ordonner de manière aléatoire
@@ -32,6 +131,8 @@ def sourates(request):
     now = datetime.now()
 
     current_time = datetime.now().time()
+
+    
 
     i = 0
     while i < len(date) and (date[i].date_jour.year != now.year or date[i].date_jour.day != now.day or date[i].date_jour.month != now.month):

@@ -372,6 +372,51 @@ h3 {
     background-image: url(assets/epiphanie.jpg);
 }
 
+.chandeleur {
+    width: 51.75vw;
+    background-image: url(assets/chandeleur.webp);
+}
+
+.careme {
+    width: 29vw;
+    background-image: url(assets/careme.webp);
+}
+
+.mercredi {
+    width: 29vw;
+    background-image: url(assets/mercredi.webp);
+}
+
+.paques {
+    width: 29vw;
+    background-image: url(assets/paques.avif);
+}
+
+.ascension {
+    width: 51.75vw;
+    background-image: url(assets/ascension.avif);
+}
+
+.pentecote {
+    width: 51.75vw;
+    background-image: url(assets/pentecote.jpg);
+}
+
+.fete {
+    width: 29vw;
+    background-image: url(assets/fete.avif);
+}
+
+.toussaint {
+    width: 29vw;
+    background-image: url(assets/toussaint.avif);
+}
+
+.noel {
+    width: 29vw;
+    background-image: url(assets/noel.avif);
+}
+
 .info {
     height: 50vh;
     background-size: 100% 100%; 
