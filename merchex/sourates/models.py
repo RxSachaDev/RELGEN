@@ -1,6 +1,7 @@
 # sourates/models.py
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from datetime import date
 
 
 class Christ(models.Model):
@@ -53,5 +54,20 @@ class Date2(models.Model):
     fete = models.DateField()
     toussaint = models.DateField()
     noel = models.DateField()
+    pessah = models.DateField(default=date.today)
+    chavouot = models.DateField(default=date.today)
+    roch = models.DateField(default=date.today)
+    yom = models.DateField(default=date.today)
+    souccot = models.DateField(default=date.today)
+    simhat = models.DateField(default=date.today)
+    hanouka = models.DateField(default=date.today)
+    pourim = models.DateField(default=date.today)
     def __str__(self):
-        return str(self.annee)      
+        return str(self.annee)
+
+class Chabbat(models.Model):
+    debut : models.DateField()
+    fin : models.DateField()
+    def __str__(self):
+        return self.debut.strftime('%Y-%m-%d-%h')
+          
