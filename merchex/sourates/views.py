@@ -12,7 +12,9 @@ from django.shortcuts import redirect
 import random
 from datetime import *
 from datetime import date
+from django.utils import timezone
 from sourates.models import Juda
+from sourates.models import Chabbat
 
 
 def christ_list(request):
@@ -115,7 +117,94 @@ def christ_list(request):
 def juda(request):
     juda = Juda.objects.all().order_by('?')[:1]
     juda = juda[0]
-    return render(request,'sourates/judaisme.html', {'juda': juda})
+    date = Chabbat.objects.all()
+    date_objects = Date2.objects.all()
+    now = timezone.now()
+    now2 = datetime.now().date()
+    i = 0
+    while i < len(date) and (date[i].fin - now).total_seconds() < 0:
+        i = i +1
+    if (date[i].debut - now).total_seconds() >= 0:
+        chabbat = date[i].debut - now
+        if chabbat.days > 0:
+            chabbat = "Début : "+str(chabbat.days)+" jour(s) "+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"
+        else :
+            chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
+    
+    else:
+        chabbat = date[i].fin - now
+        chabbat = "Fin : "+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"+ str((chabbat.seconds%3600)%60)+"s"
+
+    
+    y = 0
+    while y < len(date_objects) and date_objects[y].annee != now2.year:
+        y += 1
+
+    if y < len(date_objects):
+        time_difference = date_objects[y].pessah - now2
+
+        if time_difference.days < 0:
+            Pessah = date_objects[y + 1].pessah - now2
+            Pessah = Pessah.days
+        else:
+            Pessah = time_difference.days
+
+        time_difference2 = date_objects[y].chavouot - now2
+
+        if time_difference2.days < 0:
+            Chavouot = date_objects[y + 1].chavouot - now2
+            Chavouot = Chavouot.days
+        else:
+            Chavouot = time_difference2.days
+
+        time_difference3 = date_objects[y].roch - now2
+
+        if time_difference3.days < 0:
+            Roch = date_objects[y + 1].roch - now2
+            Roch = Roch.days
+        else:
+            Roch = time_difference3.days
+
+        time_difference4 = date_objects[y].yom - now2
+
+        if time_difference4.days < 0:
+            Yom = date_objects[y + 1].yom - now2
+            Yom = Yom.days
+        else:
+            Yom = time_difference4.days
+
+        time_difference5 = date_objects[y].souccot - now2
+
+        if time_difference5.days < 0:
+            Souccot = date_objects[y + 1].souccot - now2
+            Souccot = Souccot.days
+        else:
+            Souccot = time_difference5.days
+
+        time_difference6 = date_objects[y].simhat - now2
+
+        if time_difference6.days < 0:
+            Simhat = date_objects[y + 1].simhat - now2
+            Simhat = Simhat.days
+        else:
+            Simhat = time_difference6.days
+
+        time_difference7 = date_objects[y].hanouka - now2
+
+        if time_difference7.days < 0:
+            Hanouka = date_objects[y + 1].hanouka - now2
+            Hanouka = Hanouka.days
+        else:
+            Hanouka = time_difference7.days
+
+        time_difference8 = date_objects[y].pourim - now2
+
+        if time_difference8.days < 0:
+            Pourim = date_objects[y + 1].pourim - now2
+            Pourim = Pourim.days
+        else:
+            Pourim = time_difference8.days
+    return render(request,'sourates/judaisme.html', {'juda': juda, 'Chabbat': chabbat, 'Pessah':Pessah,'Chavouot':Chavouot,'Roch':Roch,'Yom':Yom,'Souccot':Souccot,'Simhat':Simhat,'Hanouka':Hanouka,'Pourim':Pourim})
 
 def about(request):
     return render(request,'sourates/accueil.html')
@@ -211,6 +300,8 @@ def sourates(request):
         icha_seconds = (Icha.seconds % 3600) % 60
 
     return render(request, 'sourates/sourates.html', {'sourate': sourate,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds } )
+
+
 
 def contact(request):
     if request.method == 'POST':

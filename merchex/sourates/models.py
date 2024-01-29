@@ -2,6 +2,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import date
+from django.utils import timezone
 
 
 class Christ(models.Model):
@@ -54,6 +55,7 @@ class Date2(models.Model):
     fete = models.DateField()
     toussaint = models.DateField()
     noel = models.DateField()
+    pourim = models.DateField(default=date.today)
     pessah = models.DateField(default=date.today)
     chavouot = models.DateField(default=date.today)
     roch = models.DateField(default=date.today)
@@ -61,13 +63,12 @@ class Date2(models.Model):
     souccot = models.DateField(default=date.today)
     simhat = models.DateField(default=date.today)
     hanouka = models.DateField(default=date.today)
-    pourim = models.DateField(default=date.today)
     def __str__(self):
         return str(self.annee)
-
+""
 class Chabbat(models.Model):
-    debut : models.DateField()
-    fin : models.DateField()
+    debut = models.DateTimeField(default=timezone.now)
+    fin = models.DateTimeField()
     def __str__(self):
-        return self.debut.strftime('%Y-%m-%d-%h')
+        return f"{self.debut.strftime('%Y-%m-%d')}"
           
