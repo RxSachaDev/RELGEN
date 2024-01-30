@@ -18,8 +18,7 @@ class Christ(models.Model):
 class Sourate(models.Model):
     name = models.fields.CharField(max_length=3000)
     verset = models.fields.CharField(max_length=5000)
-    n_verset = models.fields.IntegerField(
-    validators=[MinValueValidator(1), MaxValueValidator(286)]    
+    n_verset = models.fields.IntegerField( 
     )  
     def __str__(self):
         return f'{self.name}'
