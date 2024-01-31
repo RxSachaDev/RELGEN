@@ -380,12 +380,12 @@ h3 {
     display: flex;
     flex-direction: row;
     font-family: 'Istok Web', sans-serif;
+    justify-content: space-between;
 }
 
 .en-tete p {
     font-weight: 600;
     padding-top: 1vh;
-    padding-left: 50vw;
 }
 
 .priere {

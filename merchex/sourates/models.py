@@ -9,9 +9,9 @@ class Christ(models.Model):
     name = models.fields.CharField(max_length=3000)
     section = models.fields.CharField(max_length=3000)
     verset = models.fields.CharField(max_length=5000)
-    n_verset = models.fields.IntegerField(
-    validators=[MinValueValidator(1), MaxValueValidator(1292)]    
-    )
+    n_chap = models.fields.IntegerField(default = 1)
+    n_verset = models.fields.IntegerField(default = 1)
+    
     def __str__(self):
         return f'{self.name}'
 
