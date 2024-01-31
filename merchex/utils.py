@@ -5,11 +5,60 @@ import os  # Ajout d'import pour utiliser os.path
 import time
 from unidecode import unidecode
 
-url = 'http://www.bible-en-ligne.net'
+url = 'https://www.torah-box.com/torah-pdf/'
 response =requests.get(url)
 if response.ok:
     soup = BeautifulSoup(response.text, 'html.parser')
     sections = soup.findAll('li')
+    i = 2
+    x = 1
+    y=1
+    db_file = 'db.sqlite3'
+    conn = sqlite3.connect(db_file)
+    cursor = conn.cursor()
+    while i < 7:
+        section=sections[i]
+        texte_maj = section.text.split(' ')[0]
+        texte = section.text.lower().split(' ')[0]
+        txt = unidecode(texte)
+        url = f'https://www.torah-box.com/torah-pdf/torah/{txt}/{y}.html'
+        response =requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        p = soup.findAll('div', {'class':'texte_verset'})
+        if soup.find('div', {'class':'texte_verset'}) != None:
+            k=0
+            z = 1
+            while k < len(p):
+                para = p[k]
+                text = para.text.strip()
+                print(x)
+                
+                id_value = x
+                name_value = texte_maj
+                verset_value = text
+                n_chap_value = y
+                n_verset_value = z
+
+                cursor.execute("INSERT INTO sourates_juda (id, name, verset, n_chap, n_verset) VALUES (?, ?, ?, ?, ?)",
+                        (id_value, name_value, verset_value, n_chap_value, n_verset_value))
+                k += 1
+                z += 1
+                x += 1
+            y =y+1
+        else:
+            i += 1 
+            y = 1   
+    conn.commit()
+    conn.close()  
+        
+            
+
+    
+
+
+
+"""
+sections = soup.findAll('li')
     i = 0
     x = 1
     l= 0
@@ -113,15 +162,8 @@ if response.ok:
             y = 1
             i += 1    
     conn.commit()
-    conn.close()    
-        
-            
-
-                # Utilisation de paramètres de requête pour éviter les problèmes d'apostrophes
-
-
-
-
+    conn.close()
+"""
 
 
 """
