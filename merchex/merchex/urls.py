@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('christiannisme/', views.christ_list, name='christiannisme'),
-    path('accueil/',views.about),
+    path('accueil/',views.about, name = 'accueil'),
     path('islam/',views.sourates, name ='islam'),
     path('contactez-nous/',views.contact, name = 'contact'),
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent'),
