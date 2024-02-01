@@ -109,10 +109,6 @@ nav input {
     padding-bottom: 5vh;
 }
 
-.nav-links img {
-    margin-left: -28vw;
-}
-
 .nav-links a {
     text-decoration: none;
     color: black;
@@ -202,31 +198,19 @@ nav input {
     padding-left: 24vw;
 }
 
-.accueil .nav-links img {
+.nav-links img {
     padding-top: 2vh;
     width: 10vw;
     height: 20vh;
     padding-left: 30vw;
-}
-
-.decouvrir .nav-links img {
-    padding-top: 2vh;
-    width: 10vw;
-    height: 20vh;
-    padding-left: 30vw;
+    margin-left: -28vw;
 }
 
 .christ .nav-links img {
-    padding-top: 2vh;
-    width: 10vw;
-    height: 20vh;
     padding-left: 30vw;
 }
 
 .juda .nav-links img {
-    padding-top: 2vh;
-    width: 10vw;
-    height: 20vh;
     padding-left: 30vw;
 }
 
@@ -272,12 +256,18 @@ h3 {
     font-size: 55px;
 }
 
+h4 {
+    font-size: 65px;
+    font-family: 'Sawarabi Mincho', serif;
+}
+
 .middle {
-    padding-top: 20vh;
+    padding-top: 10vh;
     display: flex;
     flex-direction: row;
     padding-left: 5vw;
 }
+
 .middle img {
     width: 20vw;
     height: 80vh;
@@ -293,19 +283,19 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 6vh;
+    gap: 5vh;
     width: 40vw;
-}
-.texte p { 
-    font-size: 75px;
-    font-family: 'Sawarabi Mincho', serif;
-    font-style: italic;
     padding-left: 2vw;
     padding-right: 2vw;
 }
 
+.texte p {
+    font-size: 31px;
+    font-family: 'Sawarabi Mincho', serif;
+}
+
 .middle2 {
-    padding-top: 20vh;
+    padding-top: 10vh;
     display: flex;
     flex-direction: row;
     padding-right: 5vw;
@@ -338,44 +328,9 @@ h3 {
 
 .superposee2 img {
     width: 20vw;
-    height: 37vh;
-    
+    height: 37vh;    
 }
 
-.texte2 {
-    border: 4px solid black;
-    border-radius: 10px;
-    text-align: center;
-    margin-right: 5vw;
-    margin-left: 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6vh;
-    width: 40vw;
-}
-.texte2 p {
-    font-size: 75px;
-    font-family: 'Sawarabi Mincho', serif;
-    font-style: italic;
-    padding-left: 2vw;
-    padding-right: 2vw;
-}
-
-.middle2 a {
-    text-decoration: none;
-    width: 40vw;
-    padding-right: 8vw;
-    font-size: 75px;
-    padding-bottom: 10vh;
-    color: black;
-    font-family: 'Sawarabi Mincho', serif;
-    font-style: italic;
-}
-
-.middle2 a:hover {
-    text-decoration: underline;
-}
 
 .sourate {
     margin-left: 5vw;
@@ -386,19 +341,7 @@ h3 {
 }
 
 .B {
-    margin-left: 5vw;
-    margin-top: 10vh;
-    width: 80vw;
-    padding: 5vh 5vw;
     border: solid 2px #6f7829;
-}
-
-.C {
-    margin-left: 5vw;
-    margin-top: 10vh;
-    width: 80vw;
-    padding: 5vh 5vw;
-    border: solid 2px #3870c3;
 }
 
 .B h2 {
@@ -406,6 +349,10 @@ h3 {
     text-decoration: underline;
     animation: slideLeftToRight 1.5s ease-in-out;
 
+}
+
+.C {
+    border: solid 2px #3870c3;
 }
 
 .sourate h3 {

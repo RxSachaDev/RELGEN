@@ -14,10 +14,10 @@
                 <div class="nav-links">
                     <h2>RELGEN</h2>
                     <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
                         <li><a href="{% url 'islam' %}">Islam</a></li>
                         <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
                         <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
-                        <li><a href="">Contact </a></li>
                     </ul>
                     <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
                 </div>
@@ -28,27 +28,44 @@
     </header>
     <main>
         <div class='middle'>
-            <img src="{% static 'sourates/assets/mosquee_abu.jpg' %}" alt="Mosquee Abu">
+            <img src="{% static 'sourates/assets/pretre.jpg' %}" alt="Prètre">
             <div class='superposee'>
-                <img src="{% static 'sourates/assets/cathédrale.jpg' %}" alt="Cathédrale">
-                <img src="{% static 'sourates/assets/synagogueimage.jpeg' %}" alt="Synagogue">
+                <img src="{% static 'sourates/assets/lieus.jpg' %}" alt="Lieu sacrée">
+                <img src="{% static 'sourates/assets/lieu.png' %}" alt="Lieu sacrée">
             </div>
             <div class='texte'>
-                <p>Découvrez les différentes religions</p>
-                <p>Découvrez leur fonctionnement et leurs coutumes</p>
+                <h4>Qu'est-ce qu'une Religion ?</h4>
+                <p>Une religion est un ensemble de croyances, de pratiques, de rituels et de valeurs qui sont liés à une vision du sacré et à des questions existentielles.
+                Les religions fournissent souvent des réponses sur l'origine de l'univers, le sens de la vie, la morale et la destinée humaine. 
+                Elles impliquent généralement une dimension spirituelle et sont souvent organisées autour de textes sacrés, de doctrines et de traditions.</p>
             </div>
         </div>
         <div class='middle2'>
-            <div class='texte2'>
-                <p>Découvrez votre verset quotidien</p>
-                <p>Découvrez vos horaires de prières et les dates de fêtes</p>
+            <div class='texte'>
+                <h4>De quand date les religions ?</h4>
+                <p>Le judaïsme trouve ses racines dans l'alliance entre Dieu et Abraham, remontant à des millénaires. 
+                Le christianisme émerge au Ier siècle avec Jésus de Nazareth, dont les enseignements sont consignés dans les Évangiles. 
+                L'islam, fondé au VIIe siècle par Mahomet, repose sur les révélations du Coran. Bien que distinctes, ces religions partagent des liens étroits, 
+                formant une trame spirituelle commune et influençant mutuellement leurs croyances et pratiques.</p>
             </div>
             <div class='superposee2'>
-                <img src="{% static 'sourates/assets/juif.jpg' %}" alt="Judaisme">
-                <img src="{% static 'sourates/assets/priere2.jpeg' %}" alt="Prière">
+                <img src="{% static 'sourates/assets/priere3.jpg' %}" alt="Prière">
+                <img src="{% static 'sourates/assets/priere4.webp' %}" alt="Prière">
             </div>
-            <img src="{% static 'sourates/assets/noel2.jpeg' %}" alt="Noel">
-            
+            <img src="{% static 'sourates/assets/imam.jpeg' %}" alt="Imam">
+        </div>
+        <div class='middle'>
+            <img src="{% static 'sourates/assets/rabbin.webp' %}" alt="Rabbin">
+            <div class='superposee'>
+                <img src="{% static 'sourates/assets/mosquee2.webp' %}" alt="Mosquée">
+                <img src="{% static 'sourates/assets/jesus.jpeg' %}" alt="Jesus">
+            </div>
+            <div class='texte'>
+                <h4>Pourquoi certaines personnes sont religieuses ?</h4>
+                <p>La religiosité répond au besoin de sens en offrant des réponses structurées aux questions existentielles. 
+                Elle apporte réconfort émotionnel, crée des communautés, guide moralement, et offre une perspective transcendante, 
+                nourrissant l'espoir en un dessein plus vaste. Bien que les motivations religieuses soient diverses, chacun façonne sa foi de manière unique.</p>
+            </div>
         </div>
     </main>
     <footer class='decouvrir'>
