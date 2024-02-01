@@ -1,12 +1,52 @@
 {% extends 'sourates/base.html' %}
 
 {% block content %}
-
-    <h1>Nous contacter</h1>
-    <form action="" method="post" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Envoyer">
-    </form>
+    {% load static %}
+    <header class='islam'>
+        <div class='container1'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                    <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
+                </div>
+            </nav>
+            <h1>ISLAM</h1>
+            <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
+        </div>
+    </header>
+    <main>
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Envoyer">
+        </form>
+    </main>
+    <footer class='islam'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <div class='footer-container'>
+            <p>RELGEN 2024 ©</p>
+            <div class='footer-links'>
+                <a href="">Conditions générales</a>
+                <a href="">Mentions légales</a>
+                <a href="">Données personnelles</a>
+                <a href="">Gestion des cookies</a>
+                <a href="{% url 'contact' %}">Aide/FAQ/Contact</a>
+            </div>
+        </div>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+    </footer>
+        
 
 {% endblock %}
