@@ -17,6 +17,9 @@ from sourates.models import Juda
 from sourates.models import Chabbat
 
 
+def decouverte(request):
+    return render(request,'sourates/decouverte.html')
+
 def christ_list(request):
     christs = Christ.objects.all().order_by('?')[:1]
     christ = christs[0]

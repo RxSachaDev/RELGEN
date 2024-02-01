@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load static %}
-    <header class='islam'>
+    <header class='decouvrir'>
         <div class='container1'>
             <nav>
             
@@ -14,54 +14,44 @@
                 <div class="nav-links">
                     <h2>RELGEN</h2>
                     <ul>
-                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
                         <li><a href="{% url 'islam' %}">Islam</a></li>
                         <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
                         <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                        <li><a href="">Contact </a></li>
                     </ul>
                     <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
                 </div>
             </nav>
-            <h1>ISLAM</h1>
+            <h1>DÉCOUVRIR</h1>
             <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
         </div>
     </header>
     <main>
-        <div class='sourate'>
-            <div class='en-tete'>
-                <h3>{{ sourate.name }}</h3>
-                <p>n°{{ sourate.n_verset}}</p>
+        <div class='middle'>
+            <img src="{% static 'sourates/assets/mosquee_abu.jpg' %}" alt="Mosquee Abu">
+            <div class='superposee'>
+                <img src="{% static 'sourates/assets/cathédrale.jpg' %}" alt="Cathédrale">
+                <img src="{% static 'sourates/assets/synagogueimage.jpeg' %}" alt="Synagogue">
             </div>
-            <p>{{ sourate.verset }}</p>
+            <div class='texte'>
+                <p>Découvrez les différentes religions</p>
+                <p>Découvrez leur fonctionnement et leurs coutumes</p>
+            </div>
         </div>
-        <div class='priere'>
-            <div class='info1'>
-                <div class='info fajr'>
-                    <p>Fajr</p>
-                    <p>{{ fajr_hours }}h{{ fajr_minutes}}min{{ fajr_seconds }}s</p>
-                </div>
-                <div class='info dhuhr'>
-                    <p>Dhuhr</p>
-                    <p>{{ dhuhr_hours }}h{{ dhuhr_minutes}}min{{ dhuhr_seconds }}s</p>
-                </div> 
+        <div class='middle2'>
+            <div class='texte2'>
+                <p>Découvrez votre verset quotidien</p>
+                <p>Découvrez vos horaires de prières et les dates de fêtes</p>
             </div>
-            <div class='info1'>
-                <div class='info asr'>
-                    <p>'Asr</p>
-                    <p>{{ asr_hours }}h{{ asr_minutes}}min{{ asr_seconds }}s</p>
-                </div>
-                <div class='info maghreb'>
-                    <p>Maghreb</p>
-                    <p> {{ maghreb_hours }}h{{ maghreb_minutes}}min{{ maghreb_seconds }}s</p>
-                </div>
-                <div class='info icha'>
-                    <p>'Ichâ'</p>
-                    <p>{{ icha_hours }}h{{ icha_minutes}}min{{ icha_seconds }}s</p>
-                </div>
+            <div class='superposee2'>
+                <img src="{% static 'sourates/assets/juif.jpg' %}" alt="Judaisme">
+                <img src="{% static 'sourates/assets/priere2.jpeg' %}" alt="Prière">
             </div>
+            <img src="{% static 'sourates/assets/noel2.jpeg' %}" alt="Noel">
+            
         </div>
     </main>
-    <footer class='islam'>
+    <footer class='decouvrir'>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
         <div class='footer-container'>
             <p>RELGEN 2024 ©</p>
@@ -75,6 +65,4 @@
         </div>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
     </footer>
-        
-
 {% endblock %}

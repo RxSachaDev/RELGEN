@@ -22,10 +22,11 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('christiannisme/', views.christ_list, name='christiannisme'),
+    path('christianisme/', views.christ_list, name='christianisme'),
     path('accueil/',views.about, name = 'accueil'),
     path('islam/',views.sourates, name ='islam'),
     path('contactez-nous/',views.contact, name = 'contact'),
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent'),
-    path('judaisme/',views.juda, name = 'judaisme')
+    path('judaisme/',views.juda, name = 'judaisme'),
+    path('decouverte/',views.decouverte, name = 'decouverte')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
