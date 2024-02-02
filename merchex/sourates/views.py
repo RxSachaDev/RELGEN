@@ -36,81 +36,101 @@ def christ_list(request):
 
         if time_difference.days < 0:
             Epiphanie = date_objects[i + 1].epiphanie - now
-            Epiphanie = Epiphanie.days
+            Epiphanie = str(Epiphanie.days) + ' jours'
         else:
-            Epiphanie = time_difference.days
+            Epiphanie = str(time_difference.days) + ' jours'
+            if time_difference.days == 0:
+                Epiphanie = "Aujourd'hui"
 
         time_difference2 = date_objects[i].chandeleur - now
 
         if time_difference2.days < 0:
             Chandeleur = date_objects[i + 1].chandeleur - now
-            Chandeleur = Chandeleur.days
+            Chandeleur = str(Chandeleur.days) + ' jours'
         else:
-            Chandeleur = time_difference2.days
+            Chandeleur = str(time_difference2.days) + ' jours'
+            if time_difference2.days == 0:
+                Chandeleur = "Aujourd'hui"
 
         time_difference3 = date_objects[i].careme - now
 
         if time_difference3.days < 0:
             Careme = date_objects[i + 1].careme - now
-            Careme = Careme.days
+            Careme = str(Careme.days) + ' jours'
         else:
-            Careme = time_difference3.days
+            Careme = str(time_difference3.days) + ' jours'
+            if time_difference3.days == 0:
+                Careme = "Aujourd'hui"
 
         time_difference4 = date_objects[i].mercredi - now
 
         if time_difference4.days < 0:
             Mercredi = date_objects[i + 1].mercredi - now
-            Mercredi = Mercredi.days
+            Mercredi = str(Mercredi.days) + ' jours'
         else:
-            Mercredi = time_difference4.days
+            Mercredi = str(time_difference4.days) + ' jours'
+            if time_difference4.days == 0:
+                Mercredi = "Aujourd'hui"
 
         time_difference5 = date_objects[i].paques - now
 
         if time_difference5.days < 0:
             Paques = date_objects[i + 1].paques - now
-            Paques = Paques.days
+            Paques = str(Paques.days) + ' jours'
         else:
-            Paques = time_difference5.days
+            Paques = str(time_difference5.days) + ' jours'
+            if time_difference5.days == 0:
+                Paques = "Aujourd'hui"
 
         time_difference6 = date_objects[i].ascension - now
 
         if time_difference6.days < 0:
             Ascension = date_objects[i + 1].ascension - now
-            Ascension = Ascension.days
+            Ascension = str(Ascension.days) + ' jours'
         else:
-            Ascension = time_difference6.days
+            Ascension = str(time_difference6.days) + ' jours'
+            if time_difference6.days == 0:
+                Ascension = "Aujourd'hui"
 
         time_difference7 = date_objects[i].pentecote - now
 
         if time_difference7.days < 0:
             Pentecote = date_objects[i + 1].pentecote - now
-            Pentecote = Pentecote.days
+            Pentecote = str(Pentecote.days) + ' jours'
         else:
-            Pentecote = time_difference7.days
+            Pentecote = str(time_difference7.days) + ' jours'
+            if time_difference7.days == 0:
+                Pentecote = "Aujourd'hui"
 
         time_difference8 = date_objects[i].fete - now
 
         if time_difference8.days < 0:
             Fete = date_objects[i + 1].fete - now
-            Fete = Fete.days
+            Fete = str(Fete.days) + ' jours'
         else:
-            Fete = time_difference8.days
+            Fete = str(time_difference8.days) + ' jours'
+            if time_difference8.days == 0:
+                Fete = "Aujourd'hui"
 
         time_difference9 = date_objects[i].toussaint - now
 
         if time_difference9.days < 0:
             Toussaint = date_objects[i + 1].toussaint - now
-            Toussaint = Toussaint.days
+            Toussaint = str(Toussaint.days) + ' jours'
         else:
-            Toussaint = time_difference9.days
+            Toussaint = str(time_difference9.days) + ' jours'
+            if time_difference9.days == 0:
+                Toussaint = "Aujourd'hui"
 
         time_difference10 = date_objects[i].noel - now
 
         if time_difference10.days < 0:
             Noel = date_objects[i + 1].noel - now
-            Noel = Noel.days
+            Noel = str(Noel.days) + ' jours'
         else:
-            Noel = time_difference10.days
+            Noel = str(time_difference10.days) + ' jours'
+            if time_difference10.days == 0:
+                Noel = "Aujourd'hui"
 
         
 
@@ -148,65 +168,81 @@ def juda(request):
 
         if time_difference.days < 0:
             Pessah = date_objects[y + 1].pessah - now2
-            Pessah = Pessah.days
+            Pessah = str(Pessah.days) + ' jours'
         else:
-            Pessah = time_difference.days
+            Pessah = str(time_difference.days) + ' jours'
+            if time_difference.days == 0:
+                Pessah = "Aujourd'hui"
 
         time_difference2 = date_objects[y].chavouot - now2
 
         if time_difference2.days < 0:
             Chavouot = date_objects[y + 1].chavouot - now2
-            Chavouot = Chavouot.days
+            Chavouot = str(Chavouot.days) + ' jours'
         else:
-            Chavouot = time_difference2.days
+            Chavouot = str(time_difference2.days) + ' jours'
+            if time_difference2.days == 0:
+                Chavouot = "Aujourd'hui"
 
         time_difference3 = date_objects[y].roch - now2
 
         if time_difference3.days < 0:
             Roch = date_objects[y + 1].roch - now2
-            Roch = Roch.days
+            Roch = str(Roch.days) + ' jours'
         else:
-            Roch = time_difference3.days
+            Roch = str(time_difference3.days) + ' jours'
+            if time_difference3.days == 0:
+                Roch = "Aujourd'hui"
 
         time_difference4 = date_objects[y].yom - now2
 
         if time_difference4.days < 0:
             Yom = date_objects[y + 1].yom - now2
-            Yom = Yom.days
+            Yom = str(Yom.days) + ' jours'
         else:
-            Yom = time_difference4.days
+            Yom = str(time_difference4.days) + ' jours'
+            if time_difference4.days == 0:
+                Yom = "Aujourd'hui"
 
         time_difference5 = date_objects[y].souccot - now2
 
         if time_difference5.days < 0:
             Souccot = date_objects[y + 1].souccot - now2
-            Souccot = Souccot.days
+            Souccot = str(Souccot.days) + ' jours'
         else:
-            Souccot = time_difference5.days
+            Souccot = str(time_difference5.days) + ' jours'
+            if time_difference5.days == 0:
+                Souccot = "Aujourd'hui"
 
         time_difference6 = date_objects[y].simhat - now2
 
         if time_difference6.days < 0:
             Simhat = date_objects[y + 1].simhat - now2
-            Simhat = Simhat.days
+            Simhat = str(Simhat.days) + ' jours'
         else:
-            Simhat = time_difference6.days
+            Simhat = str(time_difference6.days) + ' jours'
+            if time_difference6.days == 0:
+                Simhat = "Aujourd'hui"
 
         time_difference7 = date_objects[y].hanouka - now2
 
         if time_difference7.days < 0:
             Hanouka = date_objects[y + 1].hanouka - now2
-            Hanouka = Hanouka.days
+            Hanouka = str(Hanouka.days) + ' jours'
         else:
-            Hanouka = time_difference7.days
+            Hanouka = str(time_difference7.days) + ' jours'
+            if time_difference7.days == 0:
+                Hanouka = "Aujourd'hui"
 
         time_difference8 = date_objects[y].pourim - now2
 
         if time_difference8.days < 0:
             Pourim = date_objects[y + 1].pourim - now2
-            Pourim = Pourim.days
+            Pourim = str(Pourim.days) + ' jours'
         else:
-            Pourim = time_difference8.days
+            Pourim = str(time_difference8.days) + ' jours'
+            if time_difference8.days == 0:
+                Pourim = "Aujourd'hui"
     return render(request,'sourates/judaisme.html', {'juda': juda, 'Chabbat': chabbat, 'Pessah':Pessah,'Chavouot':Chavouot,'Roch':Roch,'Yom':Yom,'Souccot':Souccot,'Simhat':Simhat,'Hanouka':Hanouka,'Pourim':Pourim})
 
 def about(request):
