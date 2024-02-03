@@ -371,6 +371,9 @@ def emailsent(request):
 def conditions(request):
     return render(request,'sourates/conditions.html')
 
+def donnees(request):
+    return render(request,'sourates/donnees.html')
+
 def mentions(request):
     return render(request,'sourates/mentions.html')
 

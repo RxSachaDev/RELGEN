@@ -1,0 +1,79 @@
+{% extends 'sourates/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <header class='divers'>
+        <div class='container1'>
+            <nav>
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                    <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
+                </div>
+            </nav>
+            <h1>CONDITIONS GÉNÉRALES</h1>
+            <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
+        </div>
+    </header>
+    <main>
+        <div class='conditions'>
+            <h3>Collecte des Données Personnelles :</h3>
+            <p>Le site RELGEN peut collecter des données personnelles vous concernant, telles que votre nom, adresse e-mail, et autres informations, ou lorsque vous utilisez nos services.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Utilisation des Données Personnelles :</h3>
+            <p>Les données personnelles collectées peuvent être utilisées pour personnaliser votre expérience sur le site, traiter vos demandes, 
+            vous envoyer des informations et mises à jour, améliorer nos services, et vous informer sur des sujets liés à notre contenu religieux.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Protection des Données :</h3>
+            <p>Nous prenons des mesures appropriées pour protéger vos données personnelles contre tout accès non autorisé, altération, divulgation, ou destruction. 
+            Seul le personnel autorisé a accès à ces informations.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Partage des Données Personnelles :</h3>
+            <p>Nous ne partageons pas vos données personnelles avec des tiers sans votre consentement, sauf si requis par la loi.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Cookies et Technologies Similaires :</h3>
+            <p>Nous utilisons des cookies et d'autres technologies similaires pour collecter des informations sur votre interaction avec le site. Consultez notre page "Gestion des Cookies" pour plus d'informations.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Droits des Utilisateurs :</h3>
+            <p>Vous avez le droit de demander l'accès, la correction, la suppression ou la portabilité de vos données personnelles. Pour exercer ces droits ou pour toute question concernant notre politique de protection des données, veuillez nous contacter à l'aide de notre page Contact.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Modifications de la Politique :</h3>
+            <p>Nous nous réservons le droit de mettre à jour cette Politique de Protection des Données à tout moment. Les modifications seront publiées sur cette page, et la date de dernière mise à jour sera révisée en conséquence.</p>
+        </div>
+        <div class='conditions'>
+            <h3>Consentement :</h3>
+            <p>Tous les droits de propriété intellectuelle liés au site et à son contenu sont la propriété de Roux Sacha et sont protégés par les lois applicables.En utilisant le site RELGEN, vous consentez à notre Politique de Protection des Données Personnelles.</p>
+            <p>Date de Dernière Mise à Jour : 03/02/2024</p>
+        </div>
+    </main>
+    <footer class='divers'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <div class='footer-container'>
+            <p>RELGEN 2024 ©</p>
+            <div class='footer-links'>
+                <a href="{% url 'conditions' %}">Conditions générales</a>
+                <a href="{% url 'mentions' %}">Mentions légales</a>
+                <a href="{% url 'donnees' %}">Données personnelles</a>
+                <a href="{% url 'cookies' %}">Gestion des cookies</a>
+                <a href="{% url 'contact' %}">Aide/FAQ/Contact</a>
+            </div>
+        </div>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+    </footer>
+{% endblock %}
