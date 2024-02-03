@@ -16,6 +16,8 @@ from django.utils import timezone
 from sourates.models import Juda
 from sourates.models import Chabbat
 
+def about(request):
+    return render(request,'sourates/accueil.html')
 
 def decouverte(request):
     return render(request,'sourates/decouverte.html')
@@ -245,8 +247,8 @@ def juda(request):
                 Pourim = "Aujourd'hui"
     return render(request,'sourates/judaisme.html', {'juda': juda, 'Chabbat': chabbat, 'Pessah':Pessah,'Chavouot':Chavouot,'Roch':Roch,'Yom':Yom,'Souccot':Souccot,'Simhat':Simhat,'Hanouka':Hanouka,'Pourim':Pourim})
 
-def about(request):
-    return render(request,'sourates/accueil.html')
+def conditions(request):
+    return render(request,'sourates/conditions.html')
 
 
 def sourates(request):
