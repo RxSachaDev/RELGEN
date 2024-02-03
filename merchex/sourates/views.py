@@ -374,3 +374,6 @@ def conditions(request):
 def mentions(request):
     return render(request,'sourates/mentions.html')
 
+def cookies(request):
+    return render(request,'sourates/cookies.html')
+

@@ -30,5 +30,6 @@ urlpatterns = [
     path('judaisme/',views.juda, name = 'judaisme'),
     path('decouverte/',views.decouverte, name = 'decouverte'),
     path('conditions-generales/',views.conditions, name = 'conditions'),
-    path('mentions-legales/',views.mentions, name = 'mentions')
+    path('mentions-legales/',views.mentions, name = 'mentions'),
+    path('gestions-des-cookies/',views.cookies, name = 'cookies')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
