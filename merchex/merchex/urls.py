@@ -29,5 +29,6 @@ urlpatterns = [
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent'),
     path('judaisme/',views.juda, name = 'judaisme'),
     path('decouverte/',views.decouverte, name = 'decouverte'),
-    path('conditions-generales/',views.conditions, name = 'conditions')
+    path('conditions-generales/',views.conditions, name = 'conditions'),
+    path('mentions-legales/',views.mentions, name = 'mentions')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

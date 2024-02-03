@@ -247,9 +247,6 @@ def juda(request):
                 Pourim = "Aujourd'hui"
     return render(request,'sourates/judaisme.html', {'juda': juda, 'Chabbat': chabbat, 'Pessah':Pessah,'Chavouot':Chavouot,'Roch':Roch,'Yom':Yom,'Souccot':Souccot,'Simhat':Simhat,'Hanouka':Hanouka,'Pourim':Pourim})
 
-def conditions(request):
-    return render(request,'sourates/conditions.html')
-
 
 def sourates(request):
     # Récupérer tous les objets Sourate et les ordonner de manière aléatoire
@@ -370,3 +367,10 @@ def contact(request):
 
 def emailsent(request):
     return render(request,'sourates/emailsent.html')
+
+def conditions(request):
+    return render(request,'sourates/conditions.html')
+
+def mentions(request):
+    return render(request,'sourates/mentions.html')
+
