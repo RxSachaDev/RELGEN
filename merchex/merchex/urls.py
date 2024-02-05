@@ -15,22 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from sourates import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('christianisme/', views.christ_list, name='christianisme'),
-    path('accueil/',views.about, name = 'accueil'),
+    path('',views.about, name = 'accueil'),
     path('islam/',views.sourates, name ='islam'),
-    path('contactez-nous/',views.contact, name = 'contact'),
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent'),
     path('judaisme/',views.juda, name = 'judaisme'),
     path('decouverte/',views.decouverte, name = 'decouverte'),
     path('conditions-generales/',views.conditions, name = 'conditions'),
     path('mentions-legales/',views.mentions, name = 'mentions'),
     path('donnees-personnelles/',views.donnees, name = 'donnees'),
-    path('gestions-des-cookies/',views.cookies, name = 'cookies')
+    path('gestions-des-cookies/',views.cookies, name = 'cookies'),
+    path('contactez-nous/',views.contact, name = 'contact')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'sourates.views.custom_404'
+

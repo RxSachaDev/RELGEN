@@ -5,6 +5,31 @@ import os  # Ajout d'import pour utiliser os.path
 import time
 from unidecode import unidecode
 
+url = 'http://www.fleurislam.net/media/priere/txt_mois.php'
+response =requests.get(url)
+if response.ok:
+    soup = BeautifulSoup(response.text, 'html.parser')
+    sections = soup.findAll('td')
+    i = 151
+    x = 34
+    while i < len(sections):
+        section=sections[i]
+        texte = section.text.split()
+        heure = texte[0:2]
+        min = texte[3:]
+        if i%7 == 4 or i%7 == 5:
+            i += 1
+        else :
+            print(str(heure) + ':' + str(min))
+            i += 1
+        
+
+        
+            
+
+    
+
+"""
 url = 'https://www.torah-box.com/torah-pdf/'
 response =requests.get(url)
 if response.ok:
@@ -49,13 +74,8 @@ if response.ok:
             i += 1 
             y = 1   
     conn.commit()
-    conn.close()  
-        
-            
-
-    
-
-
+    conn.close()
+"""
 
 """
 sections = soup.findAll('li')

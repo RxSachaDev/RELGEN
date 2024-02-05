@@ -553,7 +553,7 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 15vw;
+    justify-content: space-between;
     color: white;
     font-family: 'Istok Web', sans-serif;
     font-weight: 600;
@@ -565,6 +565,7 @@ footer img {
     width: 10vw;
     height: 20vh;
 }
+
 .footer-container {
     padding-top: 5vh;
     font-size: 30px;

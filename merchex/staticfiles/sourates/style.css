@@ -1,4 +1,594 @@
 * {
     margin: 0;
-    background-color: white;
 }
+
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideTopToBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideBottomToTop {
+    0% {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accueil {
+    background: url(assets/Ciel.jpg);
+}
+
+.decouvrir {
+    background: url(assets/religions.jpeg)center center;
+    background-size: 100% 100%;
+}
+
+.islam {
+    background: url(assets/desert.jpg)center center;
+    background-size: 100% 100%;
+}
+
+.christ {
+    background: url(assets/pelerinage.jpg)center center;
+    background-size: 100% 100%;
+}
+
+.juda {
+    background: url(assets/judaisme.jpg)center center;
+    background-size: 100% 100%;
+}
+
+.divers {
+    background: url(assets/monastere.jpeg)center center;
+    background-size: 100% 100%;
+}
+
+nav input {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 15vw;
+    margin-top: 15vh;
+    margin-left: -20vw;
+    color: black;
+    transition: 0.7s;
+    z-index: 2;
+}
+
+.nav-links ul {
+    list-style-type: none;
+}
+
+.nav-links li {
+    padding-bottom: 5vh;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.8em;
+    font-family: 'Istok Web', sans-serif;
+    background: linear-gradient(to top, black 0%, black 5%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size .5s;
+}
+
+.nav-links a:hover {
+    background-size: 100% 100%;
+}
+
+.menu-deroulant i {
+    position: fixed;
+    font-size: 48px;
+    color: white;
+    padding-top: 4vh;
+    padding-left: 2vw;
+    z-index: 2;
+}
+
+.menu-deroulant:hover{
+    cursor: pointer;
+}
+
+.menu-deroulant #close {
+    position: fixed;
+    margin-left: -20vw;
+    transition: 0.7s;
+    background-color: white;
+    color: black;
+    width: 13vw;
+    height: 100%;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.318);
+    z-index: 1;
+    
+}
+
+#checknav:checked~.menu-deroulant #close { 
+    margin-left: 0px;
+    transition: 0.7s;
+    animation: opacity 1.2s ease-in-out;
+    
+}
+
+#checknav:checked~.menu-deroulant #open {
+    display: none;
+}
+
+#checknav:checked~.nav-links {
+   transition: 0.7s;
+   animation: opacity 1.2s ease-in-out;
+    margin-left: 0px;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 10vw 80vw 9vw;
+}
+
+.container1 h1 {
+    grid-column: 2;
+    animation: slideTopToBottom 1.5s ease-in-out;
+    padding-bottom: 6vh;
+}
+
+.container1 img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    grid-column: 3;
+    float: right;
+}
+
+.christ .container1 img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 16vw;
+}
+
+.juda .container1 img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 24vw;
+}
+
+.nav-links img {
+    padding-top: 2vh;
+    width: 10vw;
+    height: 20vh;
+    padding-left: 30vw;
+    margin-left: -28vw;
+}
+
+.christ .nav-links img {
+    padding-left: 30vw;
+}
+
+.juda .nav-links img {
+    padding-left: 30vw;
+}
+
+.haut {
+    display: flex;
+    flex-direction: row;
+    padding-left: 7%;
+    padding-bottom: 10vh;
+}
+.haut img {
+    width: 15vw;
+    height: 15vw;
+    padding-top: 5vh;
+    padding-left: 10vw;
+    gap: 15vw;
+    animation: slideTopToBottom 1.5s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 7vh;
+    padding-bottom: 11vh;
+    font-size: 4.5em;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+    animation: opacity 0.7s;
+    animation: slideBottomToTop 1.5s ease-in-out;
+    text-shadow: 4px 5px 20px black;
+
+}
+
+h2 {
+    font-size: 2.5em;
+    font-family: 'Istok Web', sans-serif;
+    padding-bottom: 5vh;
+}
+
+.nav-links h2 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 2.6em;
+    font-family: 'Istok Web', sans-serif;
+}
+
+h4 {
+    font-size: 3.5em;
+    font-family: 'Sawarabi Mincho', serif;
+}
+
+.middle {
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5vw;
+}
+
+.middle img {
+    width: 20vw;
+    height: 80vh;
+    border-radius: 10px;
+}
+
+.texte {
+    border: 4px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+    width: 40vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.texte p {
+    font-size: 1.4em;
+    font-family: 'Sawarabi Mincho', serif;
+}
+
+.middle2 {
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    padding-right: 5vw;
+}
+
+.middle2 img {
+    width: 20vw;
+    height: 80vh;
+    border-radius: 10px;
+}
+
+.superposee {
+    padding-left: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+.superposee img {
+    width: 20vw;
+    height: 37vh;
+}
+
+.superposee2 {
+    padding-right: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+.superposee2 img {
+    width: 20vw;
+    height: 37vh;    
+}
+
+
+.sourate {
+    margin-left: 5vw;
+    margin-top: 10vh;
+    width: 80vw;
+    padding: 5vh 5vw;
+    border: solid 2px #C78255;
+}
+
+.B {
+    border: solid 2px #6f7829;
+}
+
+.B h2 {
+    font-style: italic;
+    text-decoration: underline;
+    animation: slideLeftToRight 1.5s ease-in-out;
+
+}
+
+.C {
+    border: solid 2px #3870c3;
+}
+
+.sourate h3 {
+    padding-bottom: 5vh;
+    animation: slideLeftToRight 1.5s ease-in-out;
+    width: 25vw;
+}
+.sourate p {
+    font-size: 1.4em;
+    font-family: 'Sawarabi Mincho', serif;
+    animation: slideLeftToRight 1.5s ease-in-out;
+}
+
+.en-tete {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Istok Web', sans-serif;
+    justify-content: space-between;
+}
+
+.en-tete p {
+    font-weight: 600;
+    padding-top: 1vh;
+}
+
+.priere {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+
+.fajr{
+    width: 51.75vw;
+    background-image: url(assets/Fajr.jpg);
+}
+.dhuhr{
+    width: 36.75vw;
+    background-image: url(assets/Dhuhr.jpg);
+}
+.asr{
+    width: 29vw;
+    background-image: url(assets/Asr.jpg);
+}
+.maghreb{
+    width: 29vw;
+    background-image: url(assets/Mahgreb.jpg);
+}
+.icha{
+    width: 29vw;
+    background-image: url(assets/Icha.jpg);
+}
+
+.epiphanie {
+    width: 51.75vw;
+    background-image: url(assets/epiphanie.jpg);
+}
+
+.chandeleur {
+    width: 36.75vw;
+    background-image: url(assets/chandeleur.webp);
+}
+
+.careme {
+    width: 29vw;
+    background-image: url(assets/careme.webp);
+}
+
+.mercredi {
+    width: 29vw;
+    background-image: url(assets/mercredi.webp);
+}
+
+.paques {
+    width: 29vw;
+    background-image: url(assets/paques.avif);
+}
+
+.ascension {
+    width: 51.75vw;
+    background-image: url(assets/ascension.avif);
+}
+
+.pentecote {
+    width: 36.75vw;
+    background-image: url(assets/pentecote.jpg);
+}
+
+.fete {
+    width: 29vw;
+    background-image: url(assets/fete.avif);
+}
+
+.toussaint {
+    width: 29vw;
+    background-image: url(assets/toussaint.avif);
+}
+
+.noel {
+    width: 29vw;
+    background-image: url(assets/noel.avif);
+}
+
+.chabbat {
+    width: 90vw;
+    background-image: url(assets/chabbat.jpg);
+}
+
+.chabbat p {
+    font-size: 1.4em;
+}
+
+.pourim {
+    width: 29vw;
+    background-image: url(assets/pourim.jpeg);
+}
+
+.pessah {
+    width: 29vw;
+    background-image: url(assets/pessah.jpg);
+}
+
+.chavouot {
+    width: 29vw;
+    background-image: url(assets/minha.avif);
+}
+
+.roch {
+    width: 51.75vw;
+    background-image: url(assets/maariv.avif);
+}
+
+.yom {
+    width: 36.75vw;
+    background-image: url(assets/yom.jpg);
+}
+
+.souccot {
+    width: 29vw;
+    background-image: url(assets/saharit.avif);
+}
+
+.simhat {
+    width: 29vw;
+    background-image: url(assets/simhat.webp);
+}
+
+.hanouka {
+    width: 29vw;
+    background-image: url(assets/hanouka.jpeg);
+}
+
+.info {
+    height: 50vh;
+    background-size: 100% 100%; 
+    text-align: center;
+    font-size: 4.2em;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 600;
+    color: white;
+    padding-top: 20vh;
+    text-shadow: 4px 5px 20px black;
+}
+
+.info p {
+    animation: opacity 1.5s;
+}
+
+.info1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5vw;
+    gap: 1.5vw;
+}
+
+.conditions {
+    margin-top: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 3vw;
+    border: 5px solid black;
+}
+
+.conditions p {
+    margin-top: 5vh;
+    font-size: 1.4em;
+    font-family: 'Istok Web', sans-serif;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 600;
+    margin-top: 10vh;
+    height: 20vh;
+}
+
+footer img {
+    width: 10vw;
+    height: 20vh;
+}
+
+.footer-container {
+    padding-top: 5vh;
+    font-size: 30px;
+}
+.footer-container p {
+    padding-bottom: 2vh;
+    text-shadow: 4px 5px 20px black;
+}
+.footer-links  {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.47em;
+    font-weight: 600;
+    text-shadow: 4px 5px 20px black;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+

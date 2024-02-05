@@ -1,12 +1,12 @@
 # ~/projects/django-web-app/merchex/sourates/views.py
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect
 from sourates.models import Christ
 from sourates.models import Sourate
 from sourates.models import Date
 from sourates.models import Date2
-from sourates.forms import ContactUsForm
 from django.core.mail import send_mail
 from django.shortcuts import redirect
 import random
@@ -15,6 +15,9 @@ from datetime import date
 from django.utils import timezone
 from sourates.models import Juda
 from sourates.models import Chabbat
+from django import forms
+from .forms import ContactForm
+from .models import Contact
 
 def about(request):
     return render(request,'sourates/accueil.html')
@@ -339,31 +342,20 @@ def sourates(request):
 
     return render(request, 'sourates/sourates.html', {'sourate': sourate,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds } )
 
-
-
 def contact(request):
-    if request.method == 'POST':
-        # créer une instance de notre formulaire et le remplir avec les données POST
-        form = ContactUsForm(request.POST)
+    submitted = False
 
+    if request.method == "POST":
+        form = ContactForm(request.POST)
         if form.is_valid():
-            send_mail(
-            subject=f'Message from {form.cleaned_data["name"] or "anonyme"} via MerchEx Contact Us form',
-            message=form.cleaned_data['message'],
-            from_email=form.cleaned_data['email'],
-            recipient_list=['admin@merchex.xyz'],
-        )
-            return redirect('email-sent')   
-    # si le formulaire n'est pas valide, nous laissons l'exécution continuer jusqu'au return
-    # ci-dessous et afficher à nouveau le formulaire (avec des erreurs).
-
+            form.save()
+            return HttpResponseRedirect('/merci-de-votre-message/')
     else:
-        # ceci doit être une requête GET, donc créer un formulaire vide
-        form = ContactUsForm()
+        form = ContactForm()
+        if 'submitted' in request.GET:
+            submitted = True
 
-    return render(request,
-                'sourates/contact.html',
-                {'form': form})
+    return render(request, "sourates/contact.html", {'form': form, 'submitted': submitted})
 
 def emailsent(request):
     return render(request,'sourates/emailsent.html')
@@ -380,3 +372,5 @@ def mentions(request):
 def cookies(request):
     return render(request,'sourates/cookies.html')
 
+def custom_404(request, exception):
+    return render(request, 'sourates/404.html', status=404)

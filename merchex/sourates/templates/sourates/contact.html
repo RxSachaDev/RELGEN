@@ -22,12 +22,12 @@
                     <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
                 </div>
             </nav>
-            <h1>ISLAM</h1>
+            <h1>CONTACT</h1>
             <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
         </div>
     </header>
     <main>
-        <form action="" method="post" novalidate>
+        <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Envoyer">

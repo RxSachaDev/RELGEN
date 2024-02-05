@@ -70,3 +70,7 @@ class Chabbat(models.Model):
     def __str__(self):
         return f"{self.debut.strftime('%Y-%m-%d')}"
           
+class Contact(models.Model):
+     nom = models.CharField(max_length=40)
+     mail = models.EmailField(blank=True)
+     message = models.CharField(max_length=500)
