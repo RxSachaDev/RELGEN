@@ -1,5 +1,53 @@
 {% extends 'sourates/base.html' %}
 
 {% block content %}
-    <h1>Merci de nous avoir contacter</h1>
+    {% load static %}
+    <header class='divers'>
+        <div class='container1'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                    <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
+                </div>
+            </nav>
+            <h1>CONTACT</h1>
+            <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
+        </div>
+    </header>
+    <main>
+        <div class='conditions'>
+            <h3>Message envoyé avec succès !</h3>
+            <p>Merci beaucoup pour votre message! Nous avons bien reçu votre demande et nous ferons de notre mieux pour y répondre dans les plus brefs délais. 
+            Votre contribution est précieuse pour nous !</p>
+            <p>N'hésitez pas à explorer davantage notre site ou <a href="{% url 'accueil' %}">retourner à la page d'accueil</a>.</p>
+        </div>     
+    </main>
+    <footer class='divers'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <div class='footer-container'>
+            <p>RELGEN 2024 ©</p>
+            <div class='footer-links'>
+                <a href="{% url 'conditions' %}">Conditions générales</a>
+                <a href="{% url 'mentions' %}">Mentions légales</a>
+                <a href="{% url 'donnees' %}">Données personnelles</a>
+                <a href="{% url 'cookies' %}">Gestion des cookies</a>
+                <a href="{% url 'contact' %}">Aide/FAQ/Contact</a>
+            </div>
+        </div>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+    </footer>
+        
+
 {% endblock %}

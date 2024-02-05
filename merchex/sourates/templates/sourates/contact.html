@@ -2,7 +2,7 @@
 
 {% block content %}
     {% load static %}
-    <header class='islam'>
+    <header class='divers'>
         <div class='container1'>
             <nav>
             
@@ -27,16 +27,19 @@
         </div>
     </header>
     <main>
-        <h3>Nous contacter :</h3>
-        <div class="form-container">
-            <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="Envoyer">
-            </form>
-        </div>
+        <div class='middle3'>
+            <div class="gauche">
+                <h3>Nous contacter :</h3>
+                <form method="post">
+                    {{form.as_p}}
+                    {% csrf_token %}
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+            <img src="{% static 'sourates/assets/appel.png' %}" alt="Contact">
+        </div>     
     </main>
-    <footer class='islam'>
+    <footer class='divers'>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
         <div class='footer-container'>
             <p>RELGEN 2024 ©</p>

@@ -73,13 +73,13 @@ class Chabbat(models.Model):
 class Contact(models.Model):
     RAISON_CHOICES = [
         ('question', 'Question'),
-        ('commentaire', 'Commentaire'),
+        ('avis', 'Avis'),
         ('probleme', 'Problème'),
         ('autre', 'Autre'),
     ]
-    nom = models.CharField(max_length=40)
-    mail = models.EmailField(blank=True)
-    raison = models.CharField(max_length=20, choices=RAISON_CHOICES, default='question')
-    message = models.CharField(max_length=500)
+    nom = models.CharField(max_length=40,blank=False)
+    mail = models.EmailField(blank=False)
+    raison = models.CharField(max_length=20, choices=RAISON_CHOICES, default='question', blank=False)
+    message = models.CharField(max_length=500,blank=False)
     def __str__(self):
         return f"{self.nom} - {self.raison}"
