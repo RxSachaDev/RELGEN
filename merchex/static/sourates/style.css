@@ -549,6 +549,11 @@ h4 {
     font-family: 'Istok Web', sans-serif;
 }
 
+.form-container {
+    margin-top: 10vh;
+    margin-left: 5vw;
+}
+
 footer {
     display: flex;
     flex-direction: row;

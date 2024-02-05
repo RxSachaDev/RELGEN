@@ -27,11 +27,14 @@
         </div>
     </header>
     <main>
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Envoyer">
-        </form>
+        <h3>Nous contacter :</h3>
+        <div class="form-container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
     </main>
     <footer class='islam'>
         <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
