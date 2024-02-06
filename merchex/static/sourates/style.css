@@ -588,7 +588,7 @@ form input {
     flex-direction: column;
     padding-left: 0.5vw;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 0.8em;
     border: 1px solid black;
 }
 
@@ -613,6 +613,7 @@ form textarea {
     padding: 0.5vw;
     resize: none;
     border: 1px solid black;
+    font-family: 'Istok Web', sans-serif;
 }
 
 form button {
