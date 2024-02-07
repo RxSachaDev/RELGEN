@@ -13,54 +13,6 @@
     }
 }
 
-@keyframes slideTopToBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(-60px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideRightToLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(60px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideLeftToRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-60px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideBottomToTop {
-    0% {
-        opacity: 0;
-        transform: translateY(60px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .accueil {
     background: url(assets/Ciel.jpg);
 }
@@ -140,6 +92,10 @@ nav input {
     cursor: pointer;
 }
 
+.menu-deroulant #open {
+    animation: opacity 0.5s ease-in-out;
+}
+
 .menu-deroulant #close {
     position: fixed;
     margin-left: -20vw;
@@ -160,7 +116,7 @@ nav input {
     
 }
 
-#checknav:checked~.menu-deroulant #open {
+#checknav:checked ~ .menu-deroulant #open {
     display: none;
 }
 
@@ -177,7 +133,6 @@ nav input {
 
 .container1 h1 {
     grid-column: 2;
-    animation: slideTopToBottom 1.5s ease-in-out;
     padding-bottom: 6vh;
 }
 
@@ -231,7 +186,6 @@ nav input {
     padding-top: 5vh;
     padding-left: 10vw;
     gap: 15vw;
-    animation: slideTopToBottom 1.5s ease-in-out;
 }
 
 h1 {
@@ -241,8 +195,6 @@ h1 {
     font-size: 4.5em;
     color: white;
     font-family: 'Istok Web', sans-serif;
-    animation: opacity 0.7s;
-    animation: slideBottomToTop 1.5s ease-in-out;
     text-shadow: 4px 5px 20px black;
 
 }
@@ -353,8 +305,6 @@ h4 {
 .B h2 {
     font-style: italic;
     text-decoration: underline;
-    animation: slideLeftToRight 1.5s ease-in-out;
-
 }
 
 .C {
@@ -363,13 +313,11 @@ h4 {
 
 .sourate h3 {
     padding-bottom: 5vh;
-    animation: slideLeftToRight 1.5s ease-in-out;
     width: 25vw;
 }
 .sourate p {
     font-size: 1.4em;
     font-family: 'Sawarabi Mincho', serif;
-    animation: slideLeftToRight 1.5s ease-in-out;
 }
 
 .en-tete {
@@ -522,10 +470,6 @@ h4 {
     color: white;
     padding-top: 20vh;
     text-shadow: 4px 5px 20px black;
-}
-
-.info p {
-    animation: opacity 1.5s;
 }
 
 .info1 {
