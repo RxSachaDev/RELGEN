@@ -11,7 +11,7 @@
                     <i class='bx bx-menu' id="open"></i>
                     <i class='bx bx-x' id="close"></i>
                 </label>
-                <div class="nav-links">
+                <div class="nav-links-computer">
                     <h2>RELGEN</h2>
                     <ul>
                         <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
@@ -21,10 +21,20 @@
                     </ul>
                     <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
                 </div>
+                <div class="nav-links-mobile">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                </div>
             </nav>
             <h1>WE BELIEVE IN GOD</h1>
             <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
         </div>
+        
         <div class='haut'>
             <img src="{% static 'sourates/assets/eglise.png' %}" alt="Eglise">
             <img src="{% static 'sourates/assets/mosquee.png' %}" alt="Mosquée">
