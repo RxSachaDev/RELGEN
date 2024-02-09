@@ -232,6 +232,12 @@ h5 {
     border-radius: 10px;
 }
 
+.middle4 {
+    display: flex;
+    flex-direction: row;
+    padding-right: 0px;
+}
+
 .texte {
     border: 4px solid black;
     border-radius: 10px;
@@ -302,7 +308,7 @@ h5 {
     border: solid 2px #6f7829;
 }
 
-.B h2 {
+.B h5 {
     font-style: italic;
     text-decoration: underline;
 }
@@ -884,7 +890,7 @@ footer img {
         font-family: 'Istok Web', sans-serif;
     }
     h1 {
-        font-size: calc(10px + 3.3vw);
+        font-size: calc(8px + 3.3vw);
     }
 
     h2 {
@@ -892,7 +898,7 @@ footer img {
     }
 
     h3 {
-        font-size: calc(5px + 3.3vw);
+        font-size: calc(1px + 3.3vw);
     }
 
     h5 {
@@ -967,7 +973,7 @@ footer img {
     
     
     .texte p {
-        font-size: calc(1px + 3vw);
+        font-size: calc(1px + 2.5vw);
         font-family: 'Sawarabi Mincho', serif;
     }
 
@@ -980,13 +986,29 @@ footer img {
         height: 15vh;
     }
 
+    .sourate {
+        margin-top: 5vh;
+    }
+
     .sourate p {
         font-size: calc(1px + 3vw);
+    }
+
+    .sourate h3 {
+        padding-bottom: 2vh;
+    }
+
+    .B h5 {
+        padding-bottom: 2vh;
     }
 
     .info {
         height: 25vh;
         font-size: calc(5px + 3.3vw);
+    }
+
+    .chabbat p {
+        font-size: calc(15px + 3.3vw);
     }
 
     .middle3 img {
@@ -999,6 +1021,14 @@ footer img {
 
     .gauche h3 {
         font-size: calc(20px + 3.3vw);
+    }
+
+    .conditions {
+        border: 2px solid black;
+    }
+
+    .conditions p {
+        font-size: calc(5px + 1.7vw);
     }
 
     form {
