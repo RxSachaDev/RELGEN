@@ -17,32 +17,32 @@ main{
 }
 
 .accueil {
-    background: url(assets/Ciel.jpg);
+    background: url("assets/Ciel.54c41d100d21.jpg");
     background-size: 100% 100%;
 }
 
 .decouvrir {
-    background: url(assets/religions.jpeg)center center;
+    background: url("assets/religions.10d9f778855f.jpeg")center center;
     background-size: 100% 100%;
 }
 
 .islam {
-    background: url(assets/desert.jpg)center center;
+    background: url("assets/desert.d1681096b50f.jpg")center center;
     background-size: 100% 100%;
 }
 
 .christ {
-    background: url(assets/pelerinage.jpg)center center;
+    background: url("assets/pelerinage.366127a0b5bc.jpg")center center;
     background-size: 100% 100%;
 }
 
 .juda {
-    background: url(assets/judaisme.jpg)center center;
+    background: url("assets/judaisme.a83b237a2dd2.jpg")center center;
     background-size: 100% 100%;
 }
 
 .divers {
-    background: url(assets/contact.jpg)center center;
+    background: url("assets/contact.1d4d9235aee8.jpg")center center;
     background-size: 100% 100%;
 }
 
@@ -350,78 +350,78 @@ h5 {
 
 .fajr{
     width: 51.75vw;
-    background-image: url(assets/Fajr.jpg);
+    background-image: url("assets/Fajr.118d330c4836.jpg");
 }
 .dhuhr{
     width: 36.75vw;
-    background-image: url(assets/Dhuhr.jpg);
+    background-image: url("assets/Dhuhr.e32342c47e28.jpg");
 }
 .asr{
     width: 29vw;
-    background-image: url(assets/Asr.jpg);
+    background-image: url("assets/Asr.2fc6ed13c8e7.jpg");
 }
 .maghreb{
     width: 29vw;
-    background-image: url(assets/Mahgreb.jpg);
+    background-image: url("assets/Mahgreb.ef230390c746.jpg");
 }
 .icha{
     width: 29vw;
-    background-image: url(assets/Icha.jpg);
+    background-image: url("assets/Icha.1d5f6ca0917b.jpg");
 }
 
 .epiphanie {
     width: 51.75vw;
-    background-image: url(assets/epiphanie.jpg);
+    background-image: url("assets/epiphanie.07a85604d9c5.jpg");
 }
 
 .chandeleur {
     width: 36.75vw;
-    background-image: url(assets/chandeleur.webp);
+    background-image: url("assets/chandeleur.3fa2206b91dd.webp");
 }
 
 .careme {
     width: 29vw;
-    background-image: url(assets/careme.jpeg);
+    background-image: url("assets/careme.782f404bbf54.jpeg");
 }
 
 .mercredi {
     width: 29vw;
-    background-image: url(assets/mercredi.webp);
+    background-image: url("assets/mercredi.26abe6356d71.webp");
 }
 
 .paques {
     width: 29vw;
-    background-image: url(assets/paques.webp);
+    background-image: url("assets/paques.5380417d2b07.webp");
 }
 
 .ascension {
     width: 51.75vw;
-    background-image: url(assets/ascension.webp);
+    background-image: url("assets/ascension.475f8c2df3cd.webp");
 }
 
 .pentecote {
     width: 36.75vw;
-    background-image: url(assets/pentecote.jpg);
+    background-image: url("assets/pentecote.7e50ca577d95.jpg");
 }
 
 .fete {
     width: 29vw;
-    background-image: url(assets/fete.webp);
+    background-image: url("assets/fete.977e58390521.webp");
 }
 
 .toussaint {
     width: 29vw;
-    background-image: url(assets/toussaint.webp);
+    background-image: url("assets/toussaint.30d7e6d70130.webp");
 }
 
 .noel {
     width: 29vw;
-    background-image: url(assets/noel.webp);
+    background-image: url("assets/noel.e335ada1772d.webp");
 }
 
 .chabbat {
     width: 90vw;
-    background-image: url(assets/chabbat.jpg);
+    background-image: url("assets/chabbat.9e2e16adad07.jpg");
 }
 
 .chabbat p {
@@ -430,42 +430,42 @@ h5 {
 
 .pourim {
     width: 29vw;
-    background-image: url(assets/pourim.jpeg);
+    background-image: url("assets/pourim.28d309682725.jpeg");
 }
 
 .pessah {
     width: 29vw;
-    background-image: url(assets/pessah.jpg);
+    background-image: url("assets/pessah.b76da96566ed.jpg");
 }
 
 .chavouot {
     width: 29vw;
-    background-image: url(assets/minha.webp);
+    background-image: url("assets/minha.9a68d385de33.webp");
 }
 
 .roch {
     width: 51.75vw;
-    background-image: url(assets/maariv.webp);
+    background-image: url("assets/maariv.30ae1248686d.webp");
 }
 
 .yom {
     width: 36.75vw;
-    background-image: url(assets/yom.jpg);
+    background-image: url("assets/yom.a786b56ed5d2.jpg");
 }
 
 .souccot {
     width: 29vw;
-    background-image: url(assets/saharit.webp);
+    background-image: url("assets/saharit.0e60dd7279e5.webp");
 }
 
 .simhat {
     width: 29vw;
-    background-image: url(assets/simhat.webp);
+    background-image: url("assets/simhat.665dc45f0e3e.webp");
 }
 
 .hanouka {
     width: 29vw;
-    background-image: url(assets/hanouka.jpeg);
+    background-image: url("assets/hanouka.0f0f2e31319b.jpeg");
 }
 
 .info {

@@ -18,6 +18,7 @@ main{
 
 .accueil {
     background: url(assets/Ciel.jpg);
+    background-size: 100% 100%;
 }
 
 .decouvrir {
@@ -101,6 +102,7 @@ nav input {
 
 .menu-deroulant #open {
     animation: opacity 0.5s ease-in-out;
+    text-shadow: 4px 5px 20px black;
 }
 
 .menu-deroulant #close {
@@ -632,8 +634,201 @@ footer img {
 .footer-links a:hover {
     text-decoration: underline;
 }
+@media only screen 
+  and (min-device-width: 801px) 
+  and (max-device-width: 1100px) {
+    .menu-deroulant #close {
+        position: fixed;
+        color: white;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+        height: 10vh;
+    }
+    
+    #checknav:checked~.menu-deroulant #close { 
+        display: block;
+    }
 
-@media (max-width: 1100px) and (min-width: 651px) {
+    .nav-links-computer {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        display: none;
+    }
+
+    .nav-links-mobile::before{
+        content: '';
+        position: absolute;
+        width: 80vw;
+        height: 40%;
+        background: linear-gradient(black, black);
+        animation: rotate 4s linear infinite;
+        z-index: -1;
+    }
+
+    .nav-links-mobile::after {
+        content: '';
+        position: absolute;
+        background: rgb(245, 245, 245);
+        inset: 10px;
+        border-radius: 10px;
+        z-index: -1;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+        
+    }
+
+    .nav-links-mobile ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+        text-align: center;
+        padding-left: 0px;
+    }
+    
+    .nav-links-mobile li {
+        padding: 1vh;
+        border: 8px solid black;
+        border-radius: 5px;
+    }
+
+    .nav-links-mobile a {
+        text-decoration: none;
+        color: black;
+        font-size: calc(5px + 2.5vw);
+        font-family: 'Istok Web', sans-serif;
+    }
+
+    h2 {
+        font-size: calc(5px + 3.3vw);
+    }
+
+    #checknav:checked~.nav-links-mobile {
+        position: fixed;
+        background-color: rgb(245, 245, 245);
+        margin-left: 26.5vw;
+        height:40vh;
+        width: 45vw;
+        margin-top: 5vh;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 4px 5px 20px black;
+        animation: opacity 1s ease-in-out;
+        overflow: hidden;
+    }
+
+    .menu-deroulant i {
+        font-size: calc(25px + 3.3vw);
+    }
+
+    .container1 img {
+        height: 10vh;
+        padding-top: 40%;
+    }
+
+    .middle img {
+        height: 50vh;
+    }
+
+    .superposee img {
+        height: 22vh;
+    }
+
+    .middle2 img {
+        height: 50vh;
+    }
+
+    .superposee2 img {
+        height: 22vh;
+    }
+
+    .texte p {
+        font-size: calc(0.5px + 2vw);
+    }
+
+    .sourate p {
+        font-size: calc(1px + 2vw);
+    }
+
+    .sourate h3 {
+        padding-bottom: 2vh;
+    }
+
+    .B h5 {
+        padding-bottom: 2vh;
+    }
+
+    .info {
+        height: 25vh;
+        font-size: calc(5px + 3.3vw);
+    }
+
+    .middle3 img {
+        display: none;
+    }
+
+    .gauche {
+        width: 70vw;
+    }
+
+    .gauche h3 {
+        font-size: calc(20px + 3.3vw);
+    }
+
+    form {
+        font-size: calc(5px + 3.3vw);
+    }
+
+    form input {
+        width: 70vw;
+        font-size: calc(1px + 3.3vw);
+    }
+
+    form select {
+        width: 70vw;
+        font-size: calc(1px + 2.5vw);
+    }
+
+    form textarea {
+        width: 69vw;
+        font-size: calc(1px + 3.3vw);
+    }
+
+    form button {
+        width: 70vw;
+        font-size: calc(10px + 3.3vw);
+    }
+
+    footer img {
+        height: 12vh;
+    }
+
+    .footer-container {
+        font-size: calc(10px + 3.3vw);
+    }
+
+    .footer-links a {
+        font-size: calc(1px + 1.3vw);
+    }
+  }
+
+@media only screen 
+  and (min-device-width: 651px) 
+  and (max-device-width: 800px)  {
 
     .menu-deroulant #close {
         position: fixed;
@@ -703,21 +898,21 @@ footer img {
     .nav-links-mobile a {
         text-decoration: none;
         color: black;
-        font-size: calc(25px + 3vw);
+        font-size: calc(1px + 3vw);
         font-family: 'Istok Web', sans-serif;
     }
 
     h2 {
-        font-size: calc(25px + 3.3vw);
+        font-size: calc(15px + 3.3vw);
     }
 
     #checknav:checked~.nav-links-mobile {
         position: fixed;
         background-color: rgb(245, 245, 245);
-        margin-left: 13%;
-        height: 70vh;
-        width: 60%;
-        margin-top: 15vh;
+        margin-left: 18.5%;
+        height: 45vh;
+        width: 50vw;
+        margin-top: 5vh;
         z-index: 3;
         display: flex;
         flex-direction: column;
@@ -761,6 +956,14 @@ footer img {
 
     .sourate p {
         font-size: calc(1px + 2vw);
+    }
+
+    .sourate h3 {
+        padding-bottom: 2vh;
+    }
+
+    .B h5 {
+        padding-bottom: 2vh;
     }
 
     .info {
@@ -817,7 +1020,7 @@ footer img {
     }
 }
 
-@media (max-width: 651px) {
+@media (max-width: 651px) and (min-width: 251px) {
     .menu-deroulant #close {
         position: fixed;
         color: white;
@@ -1067,6 +1270,7 @@ footer img {
     .footer-container {
         font-size: calc(5px + 3.3vw);
         padding-bottom: 2vh;
+        width: 70vw;
     }
 
     .footer-links a {

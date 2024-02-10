@@ -157,11 +157,36 @@ def juda(request):
         if chabbat.days > 0:
             chabbat = "Début : "+str(chabbat.days)+" jour(s) "+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"
         else :
-            chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
-    
-    else:
+            if ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 and ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Début : 0"+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+            elif ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 :
+                chabbat = "Début : 0"+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
+            elif ((chabbat.seconds%3600)//60) < 10 and ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Début : "+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+            elif chabbat.seconds//3600 < 10 and ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Début : 0"+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+            elif ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+            elif ((chabbat.seconds%3600)//60) < 10:
+                chabbat = "Début : "+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
+            elif chabbat.seconds//3600 < 10:
+                chabbat = "Début : 0"+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
+            else:
+                chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
+    else:       
         chabbat = date[i].fin - now
-        chabbat = "Fin : "+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"+ str((chabbat.seconds%3600)%60)+"s"
+        if ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 and ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Fin : 0"+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+        elif ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 :
+                chabbat = "Fin : 0"+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
+        elif ((chabbat.seconds%3600)//60) < 10 and ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Fin : "+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+        elif chabbat.seconds//3600 < 10 and ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Fin : 0"+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+        elif ((chabbat.seconds%3600)%60) < 10:
+                chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
+        else:
+                chabbat = "Fin : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
 
     
     y = 0
@@ -285,6 +310,13 @@ def sourates(request):
 
         fajr_seconds = (Fajr.seconds % 3600) % 60
 
+        if fajr_hours < 10:
+            fajr_hours = '0'+str(fajr_hours)
+        if fajr_minutes < 10:
+            fajr_minutes = '0'+str(fajr_minutes)
+        if fajr_seconds < 10:
+            fajr_seconds = '0'+str(fajr_seconds)
+
         time_difference2 = datetime.combine(datetime.today(), date[i].maghreb) - datetime.combine(datetime.today(), current_time)
 
         if time_difference2.total_seconds() < 0:
@@ -297,6 +329,13 @@ def sourates(request):
         maghreb_minutes = (Maghreb.seconds % 3600) // 60
 
         maghreb_seconds = (Maghreb.seconds % 3600) % 60
+
+        if maghreb_hours < 10:
+            maghreb_hours = '0'+str(maghreb_hours)
+        if maghreb_minutes < 10:
+            maghreb_minutes = '0'+str(maghreb_minutes)
+        if maghreb_seconds < 10:
+            maghreb_seconds = '0'+str(maghreb_seconds)
 
         time_difference3 = datetime.combine(datetime.today(), date[i].dhuhr) - datetime.combine(datetime.today(), current_time)
 
@@ -312,6 +351,13 @@ def sourates(request):
 
         dhuhr_seconds = (Dhuhr.seconds % 3600) % 60
 
+        if dhuhr_hours < 10:
+            dhuhr_hours = '0'+str(dhuhr_hours)
+        if dhuhr_minutes < 10:
+            dhuhr_minutes = '0'+str(dhuhr_minutes)
+        if dhuhr_seconds < 10:
+            dhuhr_seconds = '0'+str(dhuhr_seconds)
+
         time_difference4 = datetime.combine(datetime.today(), date[i].asr) - datetime.combine(datetime.today(), current_time)
 
         if time_difference4.total_seconds() < 0:
@@ -326,6 +372,13 @@ def sourates(request):
 
         asr_seconds = (Asr.seconds % 3600) % 60
 
+        if asr_hours < 10:
+            asr_hours = '0'+str(asr_hours)
+        if asr_minutes < 10:
+            asr_minutes = '0'+str(asr_minutes)
+        if asr_seconds < 10:
+            asr_seconds = '0'+str(asr_seconds)
+
         time_difference5 = datetime.combine(datetime.today(), date[i].icha) - datetime.combine(datetime.today(), current_time)
 
         if time_difference5.total_seconds() < 0:
@@ -339,6 +392,13 @@ def sourates(request):
         icha_minutes = (Icha.seconds % 3600) // 60
 
         icha_seconds = (Icha.seconds % 3600) % 60
+
+        if icha_hours < 10:
+            icha_hours = '0'+str(icha_hours)
+        if icha_minutes < 10:
+            icha_minutes = '0'+str(icha_minutes)
+        if icha_seconds < 10:
+            icha_seconds = '0'+str(icha_seconds)
 
     return render(request, 'sourates/sourates.html', {'sourate': sourate,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds } )
 
