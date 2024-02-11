@@ -36,7 +36,11 @@
         </div>
     </header>
     <main>
-        <div class='sourate'>
+        <div class='button'>
+            <button type="button" class='selectionner' onclick="window.location.href='{% url 'islam' %}'">Coran en français</button>
+            <button type="button" onclick="window.location.href='{% url 'islam_arabe' %}'">Coran en arabe</button>
+        </div>
+        <div class='verset'>
             <div class='en-tete'>
                 <h3>{{ sourate.name }}</h3>
                 <p>n°{{ sourate.n_verset}}</p>
@@ -44,6 +48,12 @@
             <p>{{ sourate.verset }}</p>
         </div>
         <div class='priere'>
+            <div class='info1'>
+                <div class='info ramadan'>
+                    <p>Ramadan</p>
+                    <p>{{ Ramadan }}</p>
+                </div>
+            </div>
             <div class='info1'>
                 <div class='info fajr'>
                     <p>Fajr</p>

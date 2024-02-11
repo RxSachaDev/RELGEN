@@ -94,6 +94,7 @@ nav input {
     padding-top: 4vh;
     padding-left: 2vw;
     z-index: 2;
+    text-shadow: 4px 5px 20px black;
 }
 
 .menu-deroulant:hover{
@@ -102,7 +103,6 @@ nav input {
 
 .menu-deroulant #open {
     animation: opacity 0.5s ease-in-out;
-    text-shadow: 4px 5px 20px black;
 }
 
 .menu-deroulant #close {
@@ -297,10 +297,31 @@ h5 {
     height: 37vh;    
 }
 
-
-.sourate {
+.button {
     margin-left: 5vw;
     margin-top: 10vh;
+}
+
+.button button {
+    text-decoration: none;
+    height: 5vh;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 600;
+}
+
+.selectionner {
+    background-color: #bb835d;
+}
+
+.selectionner2 {
+    background-color: #3870c3;
+}
+
+.verset {
+    margin-left: 5vw;
+    margin-top: 5vh;
     width: 80vw;
     padding: 5vh 5vw;
     border: solid 2px #C78255;
@@ -319,11 +340,11 @@ h5 {
     border: solid 2px #3870c3;
 }
 
-.sourate h3 {
+.verset h3 {
     padding-bottom: 5vh;
     width: 25vw;
 }
-.sourate p {
+.verset p {
     font-size: calc(1px + 1.5vw);
     font-family: 'Sawarabi Mincho', serif;
 }
@@ -340,6 +361,10 @@ h5 {
     padding-top: 1vh;
 }
 
+.right {
+    text-align: right;
+}
+
 .priere {
     margin-top: 10vh;
     display: flex;
@@ -347,6 +372,14 @@ h5 {
     gap: 3vh;
 }
 
+.ramadan {
+    width: 90vw;
+    background-image: url(assets/ramadan.jpg)
+}
+
+.ramadan p {
+    font-size: calc(30px + 3.3vw);
+}
 
 .fajr{
     width: 51.75vw;
@@ -672,7 +705,7 @@ footer img {
         content: '';
         position: absolute;
         background: rgb(245, 245, 245);
-        inset: 10px;
+        inset: 5px;
         border-radius: 10px;
         z-index: -1;
     }
@@ -691,7 +724,7 @@ footer img {
         list-style-type: none;
         display: flex;
         flex-direction: column;
-        gap: 3vh;
+        gap: 2vh;
         text-align: center;
         padding-left: 0px;
     }
@@ -699,7 +732,7 @@ footer img {
     .nav-links-mobile li {
         padding: 1vh;
         border: 8px solid black;
-        border-radius: 5px;
+        border-radius: 3px;
     }
 
     .nav-links-mobile a {
@@ -711,6 +744,7 @@ footer img {
 
     h2 {
         font-size: calc(5px + 3.3vw);
+        padding-bottom: 3vh;
     }
 
     #checknav:checked~.nav-links-mobile {
@@ -760,11 +794,11 @@ footer img {
         font-size: calc(0.5px + 2vw);
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 2vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 
@@ -954,11 +988,11 @@ footer img {
         font-size: calc(0.5px + 2vw);
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 2vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 
@@ -1020,7 +1054,7 @@ footer img {
     }
 }
 
-@media (max-width: 651px) and (min-width: 251px) {
+@media (max-width: 651px) {
     .menu-deroulant #close {
         position: fixed;
         color: white;
@@ -1189,15 +1223,15 @@ footer img {
         height: 15vh;
     }
 
-    .sourate {
+    .verset {
         margin-top: 5vh;
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 3vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 
@@ -1208,6 +1242,10 @@ footer img {
     .info {
         height: 25vh;
         font-size: calc(5px + 3.3vw);
+    }
+
+    .ramadan p {
+        font-size: calc(15px + 3.3vw);
     }
 
     .chabbat p {
@@ -1240,16 +1278,19 @@ footer img {
 
     form input {
         width: 70vw;
+        height: 3vh;
         font-size: calc(1px + 3.3vw);
     }
 
     form select {
         width: 70vw;
+        height: 3vh;
         font-size: calc(1px + 2.5vw);
     }
 
     form textarea {
         width: 69vw;
+        height: 6vh;
         font-size: calc(1px + 3.3vw);
     }
 
@@ -1281,4 +1322,203 @@ footer img {
         overflow: hidden;
     }
     
+}
+
+@media (max-height: 800px) and (min-width: 550px) and (max-width: 1100px){
+    .menu-deroulant #close {
+        position: fixed;
+        color: white;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+        height: 10vh;
+    }
+    
+    #checknav:checked~.menu-deroulant #close { 
+        display: block;
+    }
+
+    .nav-links-computer {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        display: none;
+    }
+
+    .nav-links-mobile::before{
+        content: '';
+        position: absolute;
+        width: 30vw;
+        height: 200%;
+        background: linear-gradient(black, black);
+        animation: rotate 4s linear infinite;
+        z-index: -1;
+    }
+
+    .nav-links-mobile::after {
+        content: '';
+        position: absolute;
+        background: rgb(245, 245, 245);
+        inset: 5px;
+        border-radius: 10px;
+        z-index: -1;
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+        
+    }
+
+    .nav-links-mobile ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+        text-align: center;
+        padding-left: 0px;
+    }
+    
+    .nav-links-mobile li {
+        padding: 2vh;
+        border: 4px solid black;
+        border-radius: 5px;
+    }
+
+    .nav-links-mobile a {
+        text-decoration: none;
+        color: black;
+        font-size: calc(1px + 2.5vw);
+        font-family: 'Istok Web', sans-serif;
+    }
+
+    h2 {
+        font-size: calc(5px + 3.3vw);
+    }
+
+    h4 {
+        font-size: calc(5px + 2.3vw);
+    }
+
+    #checknav:checked~.nav-links-mobile {
+        position: fixed;
+        background-color: rgb(245, 245, 245);
+        margin-left: 29.5%;
+        height: 75vh;
+        width: 35vw;
+        margin-top: 5vh;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 4px 5px 20px black;
+        animation: opacity 1s ease-in-out;
+        overflow: hidden;
+        padding: 5vh;
+     }
+
+    .menu-deroulant i {
+        font-size: calc(25px + 3.3vw);
+    }
+
+    .container1 img {
+        height: 15vh;
+        padding-top: 40%;
+    }
+
+    .middle img {
+        height: 70vh;
+    }
+
+    .superposee img {
+        height: 32vh;
+    }
+
+    .middle2 img {
+        height: 70vh;
+    }
+
+    .superposee2 img {
+        height: 32vh;
+    }
+
+    .texte p {
+        font-size: calc(0.5px + 1.4vw);
+    }
+
+    .verset p {
+        font-size: calc(1px + 2vw);
+    }
+
+    .verset h3 {
+        padding-bottom: 2vh;
+    }
+
+    .B h5 {
+        padding-bottom: 2vh;
+    }
+
+    .info {
+        height: 45vh;
+        font-size: calc(5px + 3.3vw);
+    }
+
+    .middle3 img {
+        display: none;
+    }
+
+    .gauche {
+        width: 70vw;
+    }
+
+    .gauche h3 {
+        font-size: calc(20px + 3.3vw);
+    }
+
+    form {
+        font-size: calc(5px + 3.3vw);
+    }
+
+    form input {
+        width: 70vw;
+        height: 13vh;
+        font-size: calc(1px + 3.3vw);
+    }
+
+    form select {
+        width: 70vw;
+        height: 13vh;
+        font-size: calc(1px + 2.5vw);
+    }
+
+    form textarea {
+        width: 69vw;
+        height: 16vh;
+        font-size: calc(1px + 3.3vw);
+    }
+
+    form button {
+        width: 70vw;
+        height: 16vh;
+        font-size: calc(10px + 3.3vw);
+    }
+
+    footer img {
+        height: 12vh;
+    }
+
+    .footer-container {
+        font-size: calc(5px + 2vw);
+    }
+
+    .footer-links a {
+        font-size: calc(1px + 1.3vw);
+    }
 }

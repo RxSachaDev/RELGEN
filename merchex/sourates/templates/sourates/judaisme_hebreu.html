@@ -1,0 +1,111 @@
+{% extends 'sourates/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <header class='juda'>
+        <div class='container1'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links-computer">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                    <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
+                </div>
+                <div class="nav-links-mobile">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h1>JUDAISME</h1>
+            <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
+        </div>
+    </header>
+    <main>
+        <div class='button'>
+            <button type="button" onclick="window.location.href='{% url 'judaisme' %}'">Torah en français</button>
+            <button type="button" class='selectionner2' onclick="window.location.href='{% url 'judaisme_hebreu' %}'">Torah en hébreu</button>
+        </div>
+        <div class='verset C'>
+            <div class='en-tete'>
+                <h3>{{ juda.name }}</h3>
+                <p>Chapitre {{ juda.n_chap }} n°{{ juda.n_verset}}</p>
+            </div>
+            <p  class='right'>{{ juda.verset }}</p>
+        </div>
+        <div class='priere'>
+            <div class='info1'>
+                <div class='info chabbat'>
+                    <p>שבת</p>
+                    <p>{{ Chabbat }}</p>
+                </div>
+            </div>
+            <div class='info1'>
+                <div class='info pourim'>
+                    <p>פורים</p>
+                    <p>{{ Pourim }} </p>
+                </div>
+                <div class='info pessah'>
+                    <p>פסח</p>
+                    <p>{{ Pessah }} </p>
+                </div>
+                <div class='info chavouot'>
+                    <p>שבועות</p>
+                    <p>{{ Chavouot }} </p>
+                </div>
+            </div>
+            <div class='info1'>
+                <div class='info roch'>
+                    <p>ראש השנה</p>
+                    <p>{{ Roch }} </p>
+                </div>
+                <div class='info yom'>
+                    <p>יום כיפור</p>
+                    <p>{{ Yom }} </p>
+                </div>
+            </div>
+            <div class='info1'>
+                <div class='info souccot'>
+                    <p>סוכות</p>
+                    <p>{{ Souccot }} </p>
+                </div>
+                <div class='info simhat'>
+                    <p>שמחת תורה</p>
+                    <p>{{ Simhat }} </p>
+                </div>
+                <div class='info hanouka'>
+                    <p>חנוכה</p>
+                    <p>{{ Hanouka }} </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class='juda'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <div class='footer-container'>
+            <p>RELGEN 2024 ©</p>
+            <div class='footer-links'>
+                <a href="{% url 'conditions' %}">Conditions générales</a>
+                <a href="{% url 'mentions' %}">Mentions légales</a>
+                <a href="{% url 'donnees' %}">Données personnelles</a>
+                <a href="{% url 'cookies' %}">Gestion des cookies</a>
+                <a href="{% url 'contact' %}">Aide/FAQ/Contact</a>
+            </div>
+        </div>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+    </footer>
+{% endblock %}

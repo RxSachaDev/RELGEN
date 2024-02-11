@@ -297,10 +297,31 @@ h5 {
     height: 37vh;    
 }
 
-
-.sourate {
+.button {
     margin-left: 5vw;
     margin-top: 10vh;
+}
+
+.button button {
+    text-decoration: none;
+    height: 5vh;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Istok Web', sans-serif;
+    font-weight: 600;
+}
+
+.selectionner {
+    background-color: #bb835d;
+}
+
+.selectionner2 {
+    background-color: #3870c3;
+}
+
+.verset {
+    margin-left: 5vw;
+    margin-top: 5vh;
     width: 80vw;
     padding: 5vh 5vw;
     border: solid 2px #C78255;
@@ -319,11 +340,11 @@ h5 {
     border: solid 2px #3870c3;
 }
 
-.sourate h3 {
+.verset h3 {
     padding-bottom: 5vh;
     width: 25vw;
 }
-.sourate p {
+.verset p {
     font-size: calc(1px + 1.5vw);
     font-family: 'Sawarabi Mincho', serif;
 }
@@ -340,6 +361,10 @@ h5 {
     padding-top: 1vh;
 }
 
+.right {
+    text-align: right;
+}
+
 .priere {
     margin-top: 10vh;
     display: flex;
@@ -347,6 +372,14 @@ h5 {
     gap: 3vh;
 }
 
+.ramadan {
+    width: 90vw;
+    background-image: url(assets/ramadan.jpg)
+}
+
+.ramadan p {
+    font-size: calc(30px + 3.3vw);
+}
 
 .fajr{
     width: 51.75vw;
@@ -761,11 +794,11 @@ footer img {
         font-size: calc(0.5px + 2vw);
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 2vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 
@@ -955,11 +988,11 @@ footer img {
         font-size: calc(0.5px + 2vw);
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 2vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 
@@ -1190,15 +1223,15 @@ footer img {
         height: 15vh;
     }
 
-    .sourate {
+    .verset {
         margin-top: 5vh;
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 3vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 
@@ -1209,6 +1242,10 @@ footer img {
     .info {
         height: 25vh;
         font-size: calc(5px + 3.3vw);
+    }
+
+    .ramadan p {
+        font-size: calc(15px + 3.3vw);
     }
 
     .chabbat p {
@@ -1287,7 +1324,7 @@ footer img {
     
 }
 
-@media (max-height: 800px) and (min-width: 55b0px){
+@media (max-height: 800px) and (min-width: 550px) and (max-width: 1100px){
     .menu-deroulant #close {
         position: fixed;
         color: white;
@@ -1416,11 +1453,11 @@ footer img {
         font-size: calc(0.5px + 1.4vw);
     }
 
-    .sourate p {
+    .verset p {
         font-size: calc(1px + 2vw);
     }
 
-    .sourate h3 {
+    .verset h3 {
         padding-bottom: 2vh;
     }
 

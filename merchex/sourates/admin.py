@@ -6,6 +6,8 @@ from sourates.models import Date2
 from sourates.models import Juda
 from sourates.models import Chabbat
 from sourates.models import Contact
+from sourates.models import Sourate_arabe
+from sourates.models import Juda_hebreu
 
 
 class ChristAdmin(admin.ModelAdmin):  # nous insérons ces deux lignes..
@@ -19,7 +21,9 @@ class JudaAdmin(admin.ModelAdmin):  # nous insérons ces deux lignes..
 
 admin.site.register(Christ, ChristAdmin) # nous modifions cette ligne, en ajoutant un deuxième argument
 admin.site.register(Sourate, SourateAdmin)
+admin.site.register(Sourate_arabe, SourateAdmin)
 admin.site.register(Juda, JudaAdmin)
+admin.site.register(Juda_hebreu, JudaAdmin)
 admin.site.register(Date)
 admin.site.register(Date2)
 admin.site.register(Chabbat)

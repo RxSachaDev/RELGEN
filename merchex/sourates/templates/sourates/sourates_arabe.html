@@ -1,0 +1,99 @@
+{% extends 'sourates/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <header class='islam'>
+        <div class='container1'>
+            <nav>
+            
+                <input type="checkbox" id="checknav">
+                <label for="checknav" class="menu-deroulant">
+                    <i class='bx bx-menu' id="open"></i>
+                    <i class='bx bx-x' id="close"></i>
+                </label>
+                <div class="nav-links-computer">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                    <img src="{% static 'sourates/assets/main.png' %}" alt="Main">
+                </div>
+                <div class="nav-links-mobile">
+                    <h2>RELGEN</h2>
+                    <ul>
+                        <li><a href="{% url 'decouverte' %}">Découvrir</a></li>
+                        <li><a href="{% url 'islam' %}">Islam</a></li>
+                        <li><a href="{% url 'christianisme' %}">Christianisme</a></li>
+                        <li><a href="{% url 'judaisme' %}">Judaïsme </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <h1>ISLAM</h1>
+            <a href="{% url 'accueil' %}"><img src="{% static 'sourates/assets/logo.png' %}" alt="Logo"></a>
+        </div>
+    </header>
+    <main>
+        <div class='button'>
+            <button type="button" onclick="window.location.href='{% url 'islam' %}'">Coran en français</button>
+            <button type="button" class='selectionner' onclick="window.location.href='{% url 'islam_arabe' %}'">Coran en arabe</button>
+        </div>
+        <div class='verset'>
+            <div class='en-tete'>
+                <h3>{{ sourate.name }}</h3>
+                <p>n°{{ sourate.n_verset}}</p>
+            </div>
+            <p class='right'>{{ sourate.verset }}</p>
+        </div>
+        <div class='priere'>
+            <div class='info1'>
+                <div class='info ramadan'>
+                    <p>رمضان</p>
+                    <p>{{ Ramadan }}</p>
+                </div>
+            </div>
+            <div class='info1'>
+                <div class='info fajr'>
+                    <p>الصلاة الفجر</p>
+                    <p>{{ fajr_hours }}h{{ fajr_minutes}}min{{ fajr_seconds }}s</p>
+                </div>
+                <div class='info dhuhr'>
+                    <p>الصلاة الظهر</p>
+                    <p>{{ dhuhr_hours }}h{{ dhuhr_minutes}}min{{ dhuhr_seconds }}s</p>
+                </div> 
+            </div>
+            <div class='info1'>
+                <div class='info asr'>
+                    <p>الصلاة العصر</p>
+                    <p>{{ asr_hours }}h{{ asr_minutes}}min{{ asr_seconds }}s</p>
+                </div>
+                <div class='info maghreb'>
+                    <p>الصلاة المغرب</p>
+                    <p> {{ maghreb_hours }}h{{ maghreb_minutes}}min{{ maghreb_seconds }}s</p>
+                </div>
+                <div class='info icha'>
+                    <p>الصلاة العشاء</p>
+                    <p>{{ icha_hours }}h{{ icha_minutes}}min{{ icha_seconds }}s</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class='islam'>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+        <div class='footer-container'>
+            <p>RELGEN 2024 ©</p>
+            <div class='footer-links'>
+                <a href="{% url 'conditions' %}">Conditions générales</a>
+                <a href="{% url 'mentions' %}">Mentions légales</a>
+                <a href="{% url 'donnees' %}">Données personnelles</a>
+                <a href="{% url 'cookies' %}">Gestion des cookies</a>
+                <a href="{% url 'contact' %}">Aide/FAQ/Contact</a>
+            </div>
+        </div>
+        <img src="{% static 'sourates/assets/logo.png' %}" alt="Logo">
+    </footer>
+        
+
+{% endblock %}

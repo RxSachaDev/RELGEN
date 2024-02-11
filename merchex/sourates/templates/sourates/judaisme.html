@@ -36,7 +36,11 @@
         </div>
     </header>
     <main>
-        <div class='sourate C'>
+        <div class='button'>
+            <button type="button" class='selectionner2' onclick="window.location.href='{% url 'judaisme' %}'">Torah en français</button>
+            <button type="button" onclick="window.location.href='{% url 'judaisme_hebreu' %}'">Torah en hébreu</button>
+        </div>
+        <div class='verset C'>
             <div class='en-tete'>
                 <h3>{{ juda.name }}</h3>
                 <p>Chapitre {{ juda.n_chap }} n°{{ juda.n_verset}}</p>

@@ -12,24 +12,18 @@ class Christ(models.Model):
     n_chap = models.fields.IntegerField(default = 1)
     n_verset = models.fields.IntegerField(default = 1)
     
-    def __str__(self):
-        return f'{self.name}'
 
 class Sourate(models.Model):
     name = models.fields.CharField(max_length=3000)
     verset = models.fields.CharField(max_length=5000)
     n_verset = models.fields.IntegerField( 
     )  
-    def __str__(self):
-        return f'{self.name}'
     
 class Juda(models.Model):
     name = models.fields.CharField(max_length=3000)
     verset = models.fields.CharField(max_length=5000)
     n_verset = models.fields.IntegerField(default = 1)
     n_chap = models.fields.IntegerField(default = 1)
-    def __str__(self):
-        return f'{self.name}'
 
 class Date(models.Model):
     date_jour = models.DateField()
@@ -61,6 +55,9 @@ class Date2(models.Model):
     souccot = models.DateField(default=date.today)
     simhat = models.DateField(default=date.today)
     hanouka = models.DateField(default=date.today)
+    ramadan_debut = models.DateField(default=date.today)
+    ramadan_fin = models.DateField(default=date.today)
+
     def __str__(self):
         return str(self.annee)
 ""
@@ -83,3 +80,14 @@ class Contact(models.Model):
     message = models.CharField(max_length=500,blank=False)
     def __str__(self):
         return f"{self.nom} - {self.raison}"
+    
+class Sourate_arabe(models.Model):
+    name = models.fields.CharField(max_length=3000)
+    verset = models.fields.CharField(max_length=5000)
+    n_verset = models.fields.IntegerField()  
+
+class Juda_hebreu(models.Model):
+    name = models.fields.CharField(max_length=3000)
+    verset = models.fields.CharField(max_length=5000)
+    n_verset = models.fields.IntegerField(default = 1)
+    n_chap = models.fields.IntegerField(default = 1)
