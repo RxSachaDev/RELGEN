@@ -34,7 +34,6 @@ urlpatterns = [
     path('conditions-generales/',views.conditions, name = 'conditions'),
     path('mentions-legales/',views.mentions, name = 'mentions'),
     path('donnees-personnelles/',views.donnees, name = 'donnees'),
-    path('gestions-des-cookies/',views.cookies, name = 'cookies'),
     path('contactez-nous/',views.contact, name = 'contact')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -22,7 +22,7 @@ from sourates.models import Sourate_arabe
 from sourates.models import Juda_hebreu
 
 def about(request):
-    return render(request,'sourates/accueil.html')
+    return render(request,'sourates/index.html')
 
 def decouverte(request):
     return render(request,'sourates/decouverte.html')
@@ -738,9 +738,6 @@ def donnees(request):
 
 def mentions(request):
     return render(request,'sourates/mentions.html')
-
-def cookies(request):
-    return render(request,'sourates/cookies.html')
 
 def custom_404(request, exception):
     return render(request, 'sourates/404.html', status=404)
