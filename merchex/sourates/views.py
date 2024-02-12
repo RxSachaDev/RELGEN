@@ -33,6 +33,7 @@ def christ_list(request):
     date_objects = Date2.objects.all()
 
     now = datetime.now().date()
+    now2 = datetime.now().date()
 
     i = 0
     while i < len(date_objects) and date_objects[i].annee != now.year:
@@ -59,15 +60,19 @@ def christ_list(request):
             if time_difference2.days == 0:
                 Chandeleur = "Aujourd'hui"
 
-        time_difference3 = date_objects[i].careme - now
+        time_difference3 = date_objects[i].careme_debut - now
+        time_difference11 = date_objects[i].careme_fin - now2
+        time_difference12 = date_objects[i+1].careme_debut - now2
 
-        if time_difference3.days < 0:
-            Careme = date_objects[i + 1].careme - now
-            Careme = str(Careme.days) + ' jours'
+        if time_difference3.days < 0 and time_difference11.days > 0:
+            Careme = time_difference11
+            Careme = 'Fin : '+str(Careme.days) + ' jours'
+        elif time_difference3.days > 0:
+            Careme = time_difference3
+            Careme = 'Début : '+str(Careme.days) + ' jours'
         else:
-            Careme = str(time_difference3.days) + ' jours'
-            if time_difference3.days == 0:
-                Careme = "Aujourd'hui"
+            Careme = time_difference12
+            Careme = 'Début : '+str(Careme.days) + ' jours'
 
         time_difference4 = date_objects[i].mercredi - now
 

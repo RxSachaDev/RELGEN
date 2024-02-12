@@ -417,6 +417,11 @@ h5 {
     background-image: url(assets/careme.jpeg);
 }
 
+.careme p:nth-child(2) {
+    padding-right: 6vw;
+    padding-left: 6vw;
+}
+
 .mercredi {
     width: 29vw;
     background-image: url(assets/mercredi.webp);
