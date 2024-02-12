@@ -17,32 +17,32 @@ main{
 }
 
 .accueil {
-    background: url(assets/Ciel.jpg);
+    background: url(assets/Ciel.webp);
     background-size: 100% 100%;
 }
 
 .decouvrir {
-    background: url(assets/religions.jpeg)center center;
+    background: url(assets/religions.webp)center center;
     background-size: 100% 100%;
 }
 
 .islam {
-    background: url(assets/desert.jpg)center center;
+    background: url(assets/desert.webp)center center;
     background-size: 100% 100%;
 }
 
 .christ {
-    background: url(assets/pelerinage.jpg)center center;
+    background: url(assets/pelerinage.webp)center center;
     background-size: 100% 100%;
 }
 
 .juda {
-    background: url(assets/judaisme.jpg)center center;
+    background: url(assets/judaisme.webp)center center;
     background-size: 100% 100%;
 }
 
 .divers {
-    background: url(assets/contact.jpg)center center;
+    background: url(assets/contact.webp)center center;
     background-size: 100% 100%;
 }
 
@@ -374,7 +374,7 @@ h5 {
 
 .ramadan {
     width: 90vw;
-    background-image: url(assets/ramadan.jpg)
+    background-image: url(assets/ramadan.webp)
 }
 
 .ramadan p {
@@ -383,28 +383,28 @@ h5 {
 
 .fajr{
     width: 51.75vw;
-    background-image: url(assets/Fajr.jpg);
+    background-image: url(assets/Fajr.webp);
 }
 .dhuhr{
     width: 36.75vw;
-    background-image: url(assets/Dhuhr.jpg);
+    background-image: url(assets/Dhuhr.webp);
 }
 .asr{
     width: 29vw;
-    background-image: url(assets/Asr.jpg);
+    background-image: url(assets/Asr.webp);
 }
 .maghreb{
     width: 29vw;
-    background-image: url(assets/Mahgreb.jpg);
+    background-image: url(assets/Mahgreb.webp);
 }
 .icha{
     width: 29vw;
-    background-image: url(assets/Icha.jpg);
+    background-image: url(assets/Icha.webp);
 }
 
 .epiphanie {
     width: 51.75vw;
-    background-image: url(assets/epiphanie.jpg);
+    background-image: url(assets/epiphanie.webp);
 }
 
 .chandeleur {
@@ -414,7 +414,7 @@ h5 {
 
 .careme {
     width: 29vw;
-    background-image: url(assets/careme.jpeg);
+    background-image: url(assets/careme.webp);
 }
 
 .careme p:nth-child(2) {
@@ -439,7 +439,7 @@ h5 {
 
 .pentecote {
     width: 36.75vw;
-    background-image: url(assets/pentecote.jpg);
+    background-image: url(assets/pentecote.webp);
 }
 
 .fete {
@@ -459,7 +459,7 @@ h5 {
 
 .chabbat {
     width: 90vw;
-    background-image: url(assets/chabbat.jpg);
+    background-image: url(assets/chabbat.webp);
 }
 
 .chabbat p {
@@ -468,12 +468,12 @@ h5 {
 
 .pourim {
     width: 29vw;
-    background-image: url(assets/pourim.jpeg);
+    background-image: url(assets/pourim.webp);
 }
 
 .pessah {
     width: 29vw;
-    background-image: url(assets/pessah.jpg);
+    background-image: url(assets/pessah.webp);
 }
 
 .chavouot {
@@ -488,7 +488,7 @@ h5 {
 
 .yom {
     width: 36.75vw;
-    background-image: url(assets/yom.jpg);
+    background-image: url(assets/yom.webp);
 }
 
 .souccot {
@@ -503,7 +503,7 @@ h5 {
 
 .hanouka {
     width: 29vw;
-    background-image: url(assets/hanouka.jpeg);
+    background-image: url(assets/hanouka.webp);
 }
 
 .info {
