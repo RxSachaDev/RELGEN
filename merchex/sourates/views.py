@@ -21,7 +21,7 @@ from .models import Contact
 from sourates.models import Sourate_arabe
 from sourates.models import Juda_hebreu
 
-def about(request):
+def accueil(request):
     return render(request,'sourates/index.html')
 
 def decouverte(request):

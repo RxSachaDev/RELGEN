@@ -1,7 +1,0 @@
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (1, 'AL-FATIHA','Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.',1);
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (2, 'AL-FATIHA','Louange à Allah, Seigneur de l'univers.',2);
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (3, 'AL-FATIHA','Le Tout Miséricordieux, le Très Miséricordieux,',3);
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (4, 'AL-FATIHA','Maître du Jour de la rétribution.',4);
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (5, 'AL-FATIHA','C'est Toi [Seul] que nous adorons, et c'est Toi [Seul] dont nous implorons secours.',5);
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (6, 'AL-FATIHA','Guide-nous dans le droit chemin,',6);
-INSERT INTO sourates_sourate (id, name, verset, n_verset) VALUES (7, 'AL-FATIHA','le chemin de ceux que Tu as comblés de faveurs, non pas de ceux qui ont encouru Ta colère, ni des égarés.',7);

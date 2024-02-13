@@ -24,7 +24,7 @@ from django.conf.urls import handler404
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('christianisme/', views.christ_list, name='christianisme'),
-    path('',views.about, name = 'accueil'),
+    path('',views.accueil, name = 'accueil'),
     path('islam/francais',views.sourates, name ='islam'),
     path('islam/arabe',views.sourates_arabe, name ='islam_arabe'),
     path('merci-de-votre-message/',views.emailsent, name = 'email-sent'),
