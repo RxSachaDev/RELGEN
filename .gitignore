@@ -169,6 +169,3 @@ fabric.properties
 
 # Private settings files
 *_private.py
-
-# Remove sql lite db
-*.sqlite3
