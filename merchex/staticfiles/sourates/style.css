@@ -3,7 +3,7 @@
 }
 
 main{
-    min-height: 40vh;
+    min-height: 65vh;
 }
 
 @keyframes opacity {
@@ -631,6 +631,7 @@ form button:hover {
 }
 
 footer {
+    bottom: 0px;
     display: flex;
     flex-direction: row;
     align-items: center;
