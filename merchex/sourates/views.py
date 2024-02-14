@@ -64,15 +64,16 @@ def christ_list(request):
         time_difference11 = date_objects[i].careme_fin - now2
         time_difference12 = date_objects[i+1].careme_debut - now2
 
-        if time_difference3.days < 0 and time_difference11.days > 0:
-            Careme = time_difference11
-            Careme = 'Fin : '+str(Careme.days) + ' jours'
+        if time_difference3.days < 0 and time_difference11.days < 0:
+            Careme = time_difference12
+            Careme = 'Début : '+str(Careme.days) + ' jours'
+
         elif time_difference3.days > 0:
             Careme = time_difference3
             Careme = 'Début : '+str(Careme.days) + ' jours'
         else:
-            Careme = time_difference12
-            Careme = 'Début : '+str(Careme.days) + ' jours'
+            Careme = time_difference11
+            Careme = 'Fin : '+str(Careme.days) + ' jours'
 
         time_difference4 = date_objects[i].mercredi - now
 
@@ -144,7 +145,7 @@ def christ_list(request):
             if time_difference10.days == 0:
                 Noel = "Aujourd'hui"
 
-        
+
 
 
     return render(request, 'sourates/christiannisme.html', {'christ': christ, 'Epiphanie': Epiphanie, 'Pentecote': Pentecote, 'Fete': Fete, 'Toussaint': Toussaint, 'Noel':Noel, 'Ascension': Ascension, 'Chandeleur': Chandeleur, 'Careme': Careme, 'Mercredi': Mercredi, 'Paques': Paques})
@@ -166,9 +167,9 @@ def juda(request):
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) 0"+str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min"
             elif (chabbat.seconds//3600) >= 10 and (chabbat.seconds%3600)//60 >= 10:
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) "+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"
-            elif (chabbat.seconds//3600) >= 10 and (chabbat.seconds%3600)//60 < 10: 
+            elif (chabbat.seconds//3600) >= 10 and (chabbat.seconds%3600)//60 < 10:
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) "+str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min"
-            else : 
+            else :
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) 0"+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"
         else :
             if ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 and ((chabbat.seconds%3600)%60) < 10:
@@ -187,7 +188,7 @@ def juda(request):
                 chabbat = "Début : 0"+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
             else:
                 chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
-    else:       
+    else:
         chabbat = date[i].fin - now
         if ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 and ((chabbat.seconds%3600)%60) < 10:
                 chabbat = "Fin : 0"+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
@@ -202,7 +203,7 @@ def juda(request):
         else:
                 chabbat = "Fin : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
 
-    
+
     y = 0
     while y < len(date_objects) and date_objects[y].annee != now2.year:
         y += 1
@@ -306,9 +307,9 @@ def juda_hebreu(request):
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) 0"+str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min"
             elif (chabbat.seconds//3600) >= 10 and (chabbat.seconds%3600)//60 >= 10:
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) "+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"
-            elif (chabbat.seconds//3600) >= 10 and (chabbat.seconds%3600)//60 < 10: 
+            elif (chabbat.seconds//3600) >= 10 and (chabbat.seconds%3600)//60 < 10:
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) "+str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min"
-            else : 
+            else :
                 chabbat = "Début : "+str(chabbat.days)+" jour(s) 0"+str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min"
         else :
             if ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 and ((chabbat.seconds%3600)%60) < 10:
@@ -327,7 +328,7 @@ def juda_hebreu(request):
                 chabbat = "Début : 0"+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
             else:
                 chabbat = "Début : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
-    else:       
+    else:
         chabbat = date[i].fin - now
         if ((chabbat.seconds%3600)//60) < 10 and chabbat.seconds//3600 <10 and ((chabbat.seconds%3600)%60) < 10:
                 chabbat = "Fin : 0"+ str(chabbat.seconds//3600)+"h 0"+ str((chabbat.seconds%3600)//60)+"min 0"+ str((chabbat.seconds%3600)%60)+"s"
@@ -342,7 +343,7 @@ def juda_hebreu(request):
         else:
                 chabbat = "Fin : "+ str(chabbat.seconds//3600)+"h "+ str((chabbat.seconds%3600)//60)+"min "+ str((chabbat.seconds%3600)%60)+"s"
 
-    
+
     y = 0
     while y < len(date_objects) and date_objects[y].annee != now2.year:
         y += 1
@@ -442,7 +443,7 @@ def sourates(request):
 
     current_time = datetime.now().time()
 
-    
+
 
     i = 0
     while i < len(date) and (date[i].date_jour.year != now.year or date[i].date_jour.day != now.day or date[i].date_jour.month != now.month):
@@ -451,13 +452,13 @@ def sourates(request):
     if i < len(date):
         time_difference = datetime.combine(datetime.today(), date[i].fajr) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference.total_seconds() < 0:
+        if time_difference.total_seconds()-3600 < 0:
             Fajr = datetime.combine(datetime.today(), date[i+1].fajr) - datetime.combine(datetime.today(), current_time)
         else:
             Fajr = time_difference
 
 
-        fajr_hours = Fajr.seconds // 3600
+        fajr_hours = Fajr.seconds // 3600 -1
 
         fajr_minutes = (Fajr.seconds % 3600) // 60
 
@@ -472,12 +473,12 @@ def sourates(request):
 
         time_difference2 = datetime.combine(datetime.today(), date[i].maghreb) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference2.total_seconds() < 0:
+        if time_difference2.total_seconds() -3600< 0:
             Maghreb = datetime.combine(datetime.today(), date[i+1].maghreb) - datetime.combine(datetime.today(), current_time)
         else:
             Maghreb = time_difference2
 
-        maghreb_hours = Maghreb.seconds // 3600
+        maghreb_hours = Maghreb.seconds // 3600-1
 
         maghreb_minutes = (Maghreb.seconds % 3600) // 60
 
@@ -492,13 +493,13 @@ def sourates(request):
 
         time_difference3 = datetime.combine(datetime.today(), date[i].dhuhr) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference3.total_seconds() < 0:
+        if time_difference3.total_seconds()-3600 < 0:
             Dhuhr = datetime.combine(datetime.today(), date[i+1].dhuhr) - datetime.combine(datetime.today(), current_time)
         else:
             Dhuhr = time_difference3
 
 
-        dhuhr_hours = Dhuhr.seconds // 3600
+        dhuhr_hours = Dhuhr.seconds // 3600-1
 
         dhuhr_minutes = (Dhuhr.seconds % 3600) // 60
 
@@ -513,13 +514,13 @@ def sourates(request):
 
         time_difference4 = datetime.combine(datetime.today(), date[i].asr) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference4.total_seconds() < 0:
+        if time_difference4.total_seconds()-3600 < 0:
             Asr = datetime.combine(datetime.today(), date[i+1].asr) - datetime.combine(datetime.today(), current_time)
         else:
             Asr = time_difference4
 
 
-        asr_hours = Asr.seconds // 3600
+        asr_hours = Asr.seconds // 3600-1
 
         asr_minutes = (Asr.seconds % 3600) // 60
 
@@ -534,13 +535,13 @@ def sourates(request):
 
         time_difference5 = datetime.combine(datetime.today(), date[i].icha) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference5.total_seconds() < 0:
+        if time_difference5.total_seconds()-3600 < 0:
             Icha = datetime.combine(datetime.today(), date[i+1].icha) - datetime.combine(datetime.today(), current_time)
         else:
             Icha = time_difference5
 
 
-        icha_hours = Icha.seconds // 3600
+        icha_hours = Icha.seconds // 3600 -1
 
         icha_minutes = (Icha.seconds % 3600) // 60
 
@@ -561,15 +562,15 @@ def sourates(request):
     time_difference7 = date_objects[y].ramadan_fin - now2
     time_difference8 = date_objects[y+1].ramadan_debut - now2
 
-    if time_difference6.days < 0 and time_difference6.days > 0:
-        Ramadan = time_difference7
-        Ramadan = 'Fin : '+str(Ramadan.days) + ' jours'
+    if time_difference6.days < 0 and time_difference6.days < 0:
+        Ramadan = time_difference8
+        Ramadan = 'Début : '+str(Ramadan.days) + ' jours'
     elif time_difference6.days > 0:
         Ramadan = time_difference6
         Ramadan = 'Début : '+str(Ramadan.days) + ' jours'
     else:
-        Ramadan = time_difference8
-        Ramadan = 'Début : '+str(Ramadan.days) + ' jours'
+        Ramadan = time_difference7
+        Ramadan = 'Fin : '+str(Ramadan.days) + ' jours'
 
     return render(request, 'sourates/sourates.html', {'sourate': sourate,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds, 'Ramadan': Ramadan } )
 
@@ -586,7 +587,7 @@ def sourates_arabe(request):
 
     current_time = datetime.now().time()
 
-    
+
 
     i = 0
     while i < len(date) and (date[i].date_jour.year != now.year or date[i].date_jour.day != now.day or date[i].date_jour.month != now.month):
@@ -595,13 +596,13 @@ def sourates_arabe(request):
     if i < len(date):
         time_difference = datetime.combine(datetime.today(), date[i].fajr) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference.total_seconds() < 0:
+        if time_difference.total_seconds()-3600 < 0:
             Fajr = datetime.combine(datetime.today(), date[i+1].fajr) - datetime.combine(datetime.today(), current_time)
         else:
             Fajr = time_difference
 
 
-        fajr_hours = Fajr.seconds // 3600
+        fajr_hours = Fajr.seconds // 3600 -1
 
         fajr_minutes = (Fajr.seconds % 3600) // 60
 
@@ -616,12 +617,12 @@ def sourates_arabe(request):
 
         time_difference2 = datetime.combine(datetime.today(), date[i].maghreb) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference2.total_seconds() < 0:
+        if time_difference2.total_seconds() -3600< 0:
             Maghreb = datetime.combine(datetime.today(), date[i+1].maghreb) - datetime.combine(datetime.today(), current_time)
         else:
             Maghreb = time_difference2
 
-        maghreb_hours = Maghreb.seconds // 3600
+        maghreb_hours = Maghreb.seconds // 3600-1
 
         maghreb_minutes = (Maghreb.seconds % 3600) // 60
 
@@ -636,13 +637,13 @@ def sourates_arabe(request):
 
         time_difference3 = datetime.combine(datetime.today(), date[i].dhuhr) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference3.total_seconds() < 0:
+        if time_difference3.total_seconds()-3600 < 0:
             Dhuhr = datetime.combine(datetime.today(), date[i+1].dhuhr) - datetime.combine(datetime.today(), current_time)
         else:
             Dhuhr = time_difference3
 
 
-        dhuhr_hours = Dhuhr.seconds // 3600
+        dhuhr_hours = Dhuhr.seconds // 3600-1
 
         dhuhr_minutes = (Dhuhr.seconds % 3600) // 60
 
@@ -657,13 +658,13 @@ def sourates_arabe(request):
 
         time_difference4 = datetime.combine(datetime.today(), date[i].asr) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference4.total_seconds() < 0:
+        if time_difference4.total_seconds()-3600 < 0:
             Asr = datetime.combine(datetime.today(), date[i+1].asr) - datetime.combine(datetime.today(), current_time)
         else:
             Asr = time_difference4
 
 
-        asr_hours = Asr.seconds // 3600
+        asr_hours = Asr.seconds // 3600-1
 
         asr_minutes = (Asr.seconds % 3600) // 60
 
@@ -678,13 +679,13 @@ def sourates_arabe(request):
 
         time_difference5 = datetime.combine(datetime.today(), date[i].icha) - datetime.combine(datetime.today(), current_time)
 
-        if time_difference5.total_seconds() < 0:
+        if time_difference5.total_seconds()-3600 < 0:
             Icha = datetime.combine(datetime.today(), date[i+1].icha) - datetime.combine(datetime.today(), current_time)
         else:
             Icha = time_difference5
 
 
-        icha_hours = Icha.seconds // 3600
+        icha_hours = Icha.seconds // 3600 -1
 
         icha_minutes = (Icha.seconds % 3600) // 60
 
@@ -705,15 +706,15 @@ def sourates_arabe(request):
     time_difference7 = date_objects[y].ramadan_fin - now2
     time_difference8 = date_objects[y+1].ramadan_debut - now2
 
-    if time_difference6.days < 0 and time_difference6.days > 0:
-        Ramadan = time_difference7
-        Ramadan = 'Fin : '+str(Ramadan.days) + ' jours'
+    if time_difference6.days < 0 and time_difference6.days < 0:
+        Ramadan = time_difference8
+        Ramadan = 'Début : '+str(Ramadan.days) + ' jours'
     elif time_difference6.days > 0:
         Ramadan = time_difference6
         Ramadan = 'Début : '+str(Ramadan.days) + ' jours'
     else:
-        Ramadan = time_difference8
-        Ramadan = 'Début : '+str(Ramadan.days) + ' jours'
+        Ramadan = time_difference7
+        Ramadan = 'Fin : '+str(Ramadan.days) + ' jours'
 
     return render(request, 'sourates/sourates_arabe.html', {'sourate': sourate,  'fajr_hours' : fajr_hours, 'fajr_minutes' : fajr_minutes, 'fajr_seconds' : fajr_seconds, 'maghreb_hours' : maghreb_hours, 'maghreb_minutes' : maghreb_minutes, 'maghreb_seconds' : maghreb_seconds, 'dhuhr_hours' : dhuhr_hours, 'dhuhr_minutes' : dhuhr_minutes, 'dhuhr_seconds' : dhuhr_seconds, 'asr_hours' : asr_hours, 'asr_minutes' : asr_minutes, 'asr_seconds' : asr_seconds, 'icha_hours' : icha_hours, 'icha_minutes' : icha_minutes, 'icha_seconds' : icha_seconds, 'Ramadan': Ramadan } )
 

@@ -20,9 +20,12 @@ from sourates import views
 from django.conf.urls.static import static
 from django.conf import settings
 from django.conf.urls import handler404
+from sourates.sitemaps import StaticViewSitemap
+from django.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path('christianisme/', views.christ_list, name='christianisme'),
     path('',views.accueil, name = 'accueil'),
     path('islam/francais',views.sourates, name ='islam'),
