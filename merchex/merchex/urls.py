@@ -25,7 +25,7 @@ from django.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemap}),
     path('christianisme/', views.christ_list, name='christianisme'),
     path('',views.accueil, name = 'accueil'),
     path('islam/francais',views.sourates, name ='islam'),

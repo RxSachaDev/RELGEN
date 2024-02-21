@@ -169,3 +169,5 @@ fabric.properties
 
 # Private settings files
 *_private.py
+*.sqlite3
+merchex/settings.py
