@@ -1,6 +1,6 @@
 # RELGEN
 
-Ce projet est un générateur de versets qui permet aux utilisateurs de découvrir des versets aléatoires de la Bible. Il utilise des techniques de web scraping pour extraire les versets à partir d'une source en ligne, et est développé en utilisant le framework Django pour la logique côté serveur, ainsi que HTML et CSS pour l'interface utilisateur.
+Ce projet est un générateur de versets qui permet aux utilisateurs de découvrir des versets aléatoires. Il utilise des techniques de web scraping pour extraire les versets à partir d'une source en ligne, et est développé en utilisant le framework Django pour la logique côté serveur, ainsi que HTML et CSS pour l'interface utilisateur.
 
 ## Fonctionnalités
 
